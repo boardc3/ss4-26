@@ -1,109 +1,119 @@
 import Link from 'next/link'
-import Img from '@/components/Img'
-import { IMG } from '@/lib/images'
+import MediaFrame from '@/components/MediaFrame'
+import { audiences, media, portfolio, proofStats, services, useCases } from '@/lib/commercialContent'
 
 export const metadata = {
-  title: 'Sceneset.AI — Visualization for High-End Development',
+  title: 'Sceneset.AI — Commercial Real Estate Visualization',
 }
 
 export default function HomePage() {
+  const featured = portfolio.slice(0, 4)
+
   return (
     <div className="page-fade">
-      {/* ========== HERO ========== */}
-      <section style={{ paddingTop: 30, paddingBottom: 80 }}>
+      <section style={{ paddingTop: 30, paddingBottom: 90 }}>
         <div className="container" style={{ padding: '0 40px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end', marginBottom: 48 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 64, alignItems: 'end', marginBottom: 42 }}>
             <div>
-              <div className="fu fu-1 eyebrow brass" style={{ marginBottom: 32 }}>
-                ◆ VISUALIZATION FOR HIGH-END DEVELOPMENT
+              <div className="fu fu-1 eyebrow brass" style={{ marginBottom: 28 }}>
+                Commercial real estate visualization for capital, leasing, and launch
               </div>
               <h1 className="fu fu-2 display">
-                Your tower,<br />
-                <span className="serif-italic hl-brass">already photographed.</span>
+                Make the asset feel<br />
+                <span className="serif-italic hl-brass">investable before it opens.</span>
               </h1>
             </div>
-            <div className="fu fu-3" style={{ display: 'grid', gap: 20, paddingBottom: 20 }}>
-              <p className="pullquote" style={{ maxWidth: 480 }}>
-                We render Class-A towers, mixed-use landmarks and interior fit-outs at 8K fidelity — before a single shovel is in the ground.
+            <div className="fu fu-3" style={{ display: 'grid', gap: 22, paddingBottom: 10 }}>
+              <p className="pullquote" style={{ maxWidth: 540 }}>
+                SceneSet turns plans, rough source media, and market positioning into cinematic campaigns for high-end commercial real estate.
               </p>
-              <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
-                <Link href="/studio" className="btn btn-primary">Commission a Project →</Link>
-                <Link href="/portfolio" className="btn btn-ghost">View Portfolio</Link>
+              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 6 }}>
+                <Link href="/studio" className="btn btn-primary">Build a Launch Brief</Link>
+                <Link href="/portfolio" className="btn btn-ghost">See Commercial Work</Link>
               </div>
             </div>
           </div>
 
-          <div className="fu fu-4">
-            <Img
-              src={IMG.heroCommercial}
-              aspect="21 / 9"
-              badge="SCENE 01"
-              badgeBrass="8K · MASTER"
-              metaTitle="The Biscayne Collective"
-              metaSub="72 STORIES · MIAMI · RENDER PASS 04"
-            />
-          </div>
+          <MediaFrame
+            src={media.heroVideo}
+            poster={media.heroPoster}
+            video
+            aspect="21 / 9"
+            badge="Commercial Launch Reel"
+            badgeBrass="Motion + Stills"
+            metaTitle="Retail, workplace, hospitality, residential tower, and mixed-use campaigns"
+            metaSub="Sourced from SceneSet 10-1, SS videos, Annapolis, Pinnacle Ithaca, Alewive, and White Deer"
+          />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderTop: '1px solid var(--rule)', marginTop: 32 }}>
-            {[
-              ['$14B+', 'Development value rendered'],
-              ['142',   'Class-A projects delivered'],
-              ['72 hr', 'Standard delivery window'],
-              ['8192px','Master resolution'],
-            ].map(([v, k], i) => (
-              <div key={k} className="fu" style={{
-                animationDelay: `${500 + i * 100}ms`,
-                padding: '32px 28px',
-                borderRight: i < 3 ? '1px solid var(--rule)' : 'none',
+            {proofStats.map(([value, label], i) => (
+              <div key={label} className="fu" style={{
+                animationDelay: `${500 + i * 90}ms`,
+                padding: '30px 26px',
+                borderRight: i < proofStats.length - 1 ? '1px solid var(--rule)' : 'none',
               }}>
-                <div className="stat-num brass" style={{ fontSize: '2.8rem', marginBottom: 10 }}>{v}</div>
-                <div className="mono" style={{ color: 'var(--ink-500)' }}>{k}</div>
+                <div className="stat-num brass" style={{ fontSize: '2.45rem', marginBottom: 10 }}>{value}</div>
+                <div className="mono" style={{ color: 'var(--ink-500)', lineHeight: 1.6 }}>{label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ========== CLIENT MARQUEE ========== */}
       <div className="marquee">
         <div className="marquee-track">
           {[...Array(2)].flatMap((_, j) =>
-            ['NORTHFIELD CAPITAL', 'HAUS WERK STUDIO', 'SKANSKA USA', 'RELATED GROUP',
-             'FOSTER + PARTNERS', 'CBRE DEVELOPMENT', 'TISHMAN SPEYER', 'SHOP ARCHITECTS',
-             'HINES INTERNATIONAL', 'ROCKEFELLER GROUP'].map((n, i) => (
+            ['CAPITAL RAISE', 'PRE-LEASING', 'MIXED-USE', 'CLASS-A OFFICE', 'RETAIL DISTRICT',
+              'HOSPITALITY', 'ENTITLEMENTS', 'BROKER DECKS', 'LAUNCH FILMS', 'INVESTOR WEBSITES'].map((n, i) => (
               <span key={`${j}-${i}`} className="marquee-item">{n}</span>
             ))
           )}
         </div>
       </div>
 
-      {/* ========== WHAT WE RENDER ========== */}
       <section style={{ padding: '120px 40px' }}>
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>§ 01 — SERVICES</div>
-              <h2 className="display">Four disciplines.<br /><span className="serif-italic hl-brass">One studio.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>01 / Strategy</div>
+              <h2 className="display">Built for the people<br /><span className="serif-italic hl-brass">who move the deal.</span></h2>
             </div>
-            <p className="pullquote" style={{ maxWidth: 480 }}>
-              From conceptual massing studies to investor-grade marketing reels — every scene built in-house, reviewed by a creative director, signed before it leaves.
+            <p className="pullquote" style={{ maxWidth: 520 }}>
+              High-end commercial buyers do not just need a rendering. They need confidence in the place, the audience, the use, and the upside.
             </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
-            {[
-              { n: '01', t: 'Exterior Towers',   s: 'Class-A commercial, mixed-use, hospitality', img: IMG.tower2,  href: '/developments' },
-              { n: '02', t: 'Interior Fit-out',   s: 'Lobbies, amenities, unit finishes',          img: IMG.lobby1, href: '/interiors' },
-              { n: '03', t: 'Site & Masterplan',  s: 'Context, massing, urban integration',        img: IMG.plaza1, href: '/developments' },
-              { n: '04', t: 'Motion & Film',      s: '4K flythroughs, investor reels, 60 fps',    img: IMG.hotel1, href: '/portfolio' },
-            ].map((c, i) => (
-              <Link key={c.n} href={c.href} className="fu card card-hover" style={{ animationDelay: `${i * 100}ms`, cursor: 'pointer', display: 'block' }}>
-                <Img src={c.img} aspect="4/5" badge={c.n} ticks={false} />
-                <div style={{ padding: '28px 24px 32px' }}>
-                  <div className="eyebrow brass" style={{ marginBottom: 14 }}>SERVICE · {c.n}</div>
-                  <h3 className="display" style={{ marginBottom: 10 }}>{c.t}</h3>
-                  <p style={{ color: 'var(--ink-500)', marginBottom: 24, fontSize: '0.92rem' }}>{c.s}</p>
-                  <div className="btn-text" style={{ display: 'inline-block' }}>Explore →</div>
+            {audiences.map((item, i) => (
+              <div key={item.title} className="card card-hover fu" style={{ padding: 28, animationDelay: `${i * 80}ms` }}>
+                <div className="mono hl-brass" style={{ marginBottom: 18 }}>0{i + 1}</div>
+                <h3 className="display" style={{ marginBottom: 14 }}>{item.title}</h3>
+                <p style={{ color: 'var(--ink-500)', fontSize: '0.94rem' }}>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '120px 40px', background: 'var(--bg-paper)' }}>
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="section-num" style={{ marginBottom: 14 }}>02 / Commercial Toolkit</div>
+              <h2 className="display">One campaign.<br /><span className="serif-italic hl-brass">Many deal moments.</span></h2>
+            </div>
+            <Link href="/developments" className="btn btn-ghost">Explore Commercial Services</Link>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+            {services.map((service, i) => (
+              <Link key={service.title} href={i === 2 ? '/interiors' : '/developments'} className="card card-hover fu" style={{ display: 'block', animationDelay: `${i * 90}ms` }}>
+                <MediaFrame src={service.image} aspect="4 / 5" badge={`Service ${service.number}`} />
+                <div style={{ padding: '26px 22px 30px' }}>
+                  <div className="eyebrow brass" style={{ marginBottom: 12 }}>{service.number}</div>
+                  <h3 className="display" style={{ marginBottom: 12 }}>{service.title}</h3>
+                  <p style={{ color: 'var(--ink-500)', fontSize: '0.92rem', marginBottom: 22 }}>{service.summary}</p>
+                  <div className="btn-text">Open Scope</div>
                 </div>
               </Link>
             ))}
@@ -111,132 +121,98 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== FEATURED DEVELOPMENT ========== */}
+      <section className="bg-deep" style={{ padding: '130px 40px' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 80, alignItems: 'center' }}>
+            <div>
+              <div className="eyebrow brass" style={{ marginBottom: 28, color: 'var(--brass-400)' }}>03 / Featured Use Case</div>
+              <h2 className="display" style={{ marginBottom: 28 }}>
+                From an apartment building to an entire market story.
+              </h2>
+              <p className="pullquote" style={{ color: 'var(--ink-300)', fontSize: '1.35rem', marginBottom: 34 }}>
+                The Gun Hill / Pinnacle Ithaca work reframes a building as a lifestyle system: interiors, Cornell proximity, waterfalls, dining, lake access, and neighborhood energy.
+              </p>
+              <Link href="/portfolio" className="btn btn-ghost-light">View Case Work</Link>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+              <MediaFrame src={media.gunHillVideo} poster={media.gunHillInteriorPoster} video aspect="4 / 5" badge="Interior Film" />
+              <MediaFrame src={media.pinnacleOutput1} aspect="4 / 5" badge="Lifestyle Context" style={{ marginTop: 46 }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '120px 40px' }}>
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="section-num" style={{ marginBottom: 14 }}>04 / Use Cases</div>
+              <h2 className="display">Where the assets<br /><span className="serif-italic hl-brass">create leverage.</span></h2>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
+            {useCases.map((item, i) => (
+              <div key={item.title} className="card-soft fu" style={{ padding: 34, animationDelay: `${i * 80}ms` }}>
+                <div className="mono hl-brass" style={{ marginBottom: 16 }}>USE CASE 0{i + 1}</div>
+                <h3 className="display" style={{ marginBottom: 24 }}>{item.title}</h3>
+                <div style={{ display: 'grid', gap: 18 }}>
+                  <div>
+                    <div className="eyebrow" style={{ marginBottom: 8 }}>Input</div>
+                    <p style={{ color: 'var(--ink-500)' }}>{item.from}</p>
+                  </div>
+                  <div>
+                    <div className="eyebrow brass" style={{ marginBottom: 8 }}>Output</div>
+                    <p>{item.to}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: '120px 40px', background: 'var(--bg-paper)' }}>
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>§ 02 — FEATURED</div>
-              <h2 className="display">The Biscayne Collective.</h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>05 / Selected Work</div>
+              <h2 className="display">Commercial scenes<br /><span className="serif-italic hl-brass">with a job to do.</span></h2>
             </div>
-            <div className="mono">NORTHFIELD CAPITAL · PHASE III · 2026</div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 40, marginBottom: 20 }}>
-            <Img src={IMG.tower1} aspect="4/5" badge="EXTERIOR · DUSK" metaTitle="West Elevation" metaSub="10240 × 5760 · V-RAY GPU" />
-            <div style={{ display: 'grid', gap: 20, alignContent: 'start' }}>
-              <Img src={IMG.lobby2} aspect="4/3" badge="LOBBY · L01" />
-              <Img src={IMG.plaza1} aspect="4/3" badge="PLAZA · 05:42 PM" />
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 80, paddingTop: 40, borderTop: '1px solid var(--rule)' }}>
-            <p className="pullquote" style={{ fontSize: '1.6rem' }}>
-              "A 72-story landmark. Rendered across four light states before the steel was ordered."
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
-              {[['72', 'STORIES'], ['1.4M', 'SF GSA'], ['$890M', 'CONSTRUCTION'], ['18', 'RENDER PASSES']].map(([v, k]) => (
-                <div key={k}>
-                  <div className="stat-num" style={{ fontSize: '2.2rem', marginBottom: 6 }}>{v}</div>
-                  <div className="mono" style={{ color: 'var(--ink-500)' }}>{k}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== PROCESS ========== */}
-      <section style={{ padding: '120px 40px' }}>
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>§ 03 — PROCESS</div>
-              <h2 className="display">From CAD<br />to <span className="serif-italic hl-brass">cinema.</span></h2>
-            </div>
-            <p className="pullquote" style={{ maxWidth: 420 }}>
-              A disciplined pipeline — four phases, one creative director per project, no outsourcing.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
-            {[
-              { n: '01', t: 'Ingest',   s: 'CAD · Revit · Rhino. 0.02mm tolerance preserved.', img: IMG.plan1 },
-              { n: '02', t: 'Compose',  s: 'Camera, light, materials — shot-listed by a director.', img: IMG.mat1 },
-              { n: '03', t: 'Render',   s: '8K master, 32-bit color, 4096 samples per pixel.', img: IMG.site1 },
-              { n: '04', t: 'Deliver',  s: 'EXR, PNG, 4K video. 72 hours. Unlimited first-round.', img: IMG.tower4 },
-            ].map((s, i) => (
-              <div key={s.n} className="fu" style={{ animationDelay: `${i * 120}ms` }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 18, paddingBottom: 16, borderBottom: '1px solid var(--rule)' }}>
-                  <div className="display" style={{ fontSize: '2.6rem', color: 'var(--brass-500)' }}>{s.n}</div>
-                  <div className="mono" style={{ color: 'var(--ink-500)' }}>PHASE {s.n}</div>
-                </div>
-                <Img src={s.img} aspect="4/3" ticks={false} style={{ marginBottom: 20 }} />
-                <h3 className="display" style={{ fontSize: '1.6rem', marginBottom: 10 }}>{s.t}</h3>
-                <p style={{ color: 'var(--ink-500)', fontSize: '0.92rem' }}>{s.s}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========== TESTIMONIAL ========== */}
-      <section className="bg-deep" style={{ padding: '140px 40px' }}>
-        <div className="container-narrow">
-          <div className="eyebrow brass" style={{ marginBottom: 40, color: 'var(--brass-400)' }}>◆ CLIENT</div>
-          <p className="display" style={{ fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 300, lineHeight: 1.15, marginBottom: 56, color: 'var(--bg-paper)', textWrap: 'pretty' }}>
-            "Sceneset renders closed our Series-D raise. The LPs could{' '}
-            <span className="serif-italic" style={{ color: 'var(--brass-400)' }}>walk the lobby</span>{' '}
-            eighteen months before we broke ground."
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.14)' }}>
-            <div>
-              <div className="serif-italic" style={{ fontSize: '1.4rem', color: 'var(--bg-paper)', marginBottom: 4 }}>Elena Moreau</div>
-              <div className="mono" style={{ color: 'var(--ink-300)' }}>MANAGING PARTNER · NORTHFIELD CAPITAL</div>
-            </div>
-            <div className="mono" style={{ color: 'var(--brass-400)' }}>CASE STUDY 04 →</div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== PORTFOLIO PREVIEW ========== */}
-      <section style={{ padding: '120px 40px' }}>
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>§ 04 — SELECTED WORK</div>
-              <h2 className="display">Recent commissions.</h2>
-            </div>
-            <Link href="/portfolio" className="btn btn-ghost">View Full Portfolio →</Link>
+            <Link href="/portfolio" className="btn btn-ghost">Full Work Index</Link>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 24 }}>
-            {[
-              { src: IMG.tower3, n: 'Hudson North',        s: 'NEW YORK · 71 STORIES',     col: 'span 7', ar: '16/11' },
-              { src: IMG.hotel2, n: 'Rosewood Palisades',  s: 'LOS ANGELES · HOSPITALITY', col: 'span 5', ar: '16/11' },
-              { src: IMG.int1,   n: 'Centurion Plaza L01', s: 'AUSTIN · LOBBY',             col: 'span 5', ar: '4/3'  },
-              { src: IMG.tower5, n: 'Æther West',          s: 'SEATTLE · 58 STORIES',       col: 'span 7', ar: '4/3'  },
-            ].map((p, i) => (
-              <div key={p.n} className="fu" style={{ gridColumn: p.col, animationDelay: `${i * 100}ms` }}>
-                <Img src={p.src} aspect={p.ar} metaTitle={p.n} metaSub={p.s} />
+            {featured.map((project, i) => (
+              <div key={project.name} className="fu" style={{ gridColumn: i < 2 ? 'span 6' : 'span 6', animationDelay: `${i * 80}ms` }}>
+                <MediaFrame
+                  src={project.video || project.image}
+                  poster={project.image}
+                  video={Boolean(project.video)}
+                  aspect="16 / 10"
+                  badge={project.category}
+                  badgeBrass={project.year}
+                  metaTitle={project.name}
+                  metaSub={`${project.tag} · ${project.location}`}
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ========== CTA ========== */}
       <section style={{ padding: '140px 40px', background: 'var(--brass-100)' }}>
         <div className="container-narrow" style={{ textAlign: 'center' }}>
-          <div className="eyebrow brass" style={{ marginBottom: 32 }}>◆ BEGIN A PROJECT</div>
-          <h2 className="display" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.8rem)', marginBottom: 32 }}>
-            Render your next <span className="serif-italic hl-brass">landmark.</span>
+          <div className="eyebrow brass" style={{ marginBottom: 30 }}>Begin a Commercial Brief</div>
+          <h2 className="display" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.8rem)', marginBottom: 30 }}>
+            Give the next investor, tenant, or buyer<br />
+            <span className="serif-italic hl-brass">something specific to believe.</span>
           </h2>
-          <p className="pullquote" style={{ fontSize: '1.4rem', marginBottom: 48, maxWidth: 640, margin: '0 auto 48px' }}>
-            Three questions. A creative director responds personally within 24 hours — not a bot, not a form autoreply.
+          <p className="pullquote" style={{ fontSize: '1.35rem', margin: '0 auto 44px', maxWidth: 700 }}>
+            Send the address, program, source materials, and deadline. SceneSet will shape the highest-leverage commercial package.
           </p>
           <Link href="/studio" className="btn btn-primary" style={{ padding: '18px 36px', fontSize: '0.88rem' }}>
-            Commission Sceneset →
+            Start the Brief
           </Link>
         </div>
       </section>

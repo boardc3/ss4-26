@@ -5,12 +5,12 @@ import { usePathname } from 'next/navigation'
 import { useTweaksContext } from '@/contexts/TweaksContext'
 
 const NAV = [
-  { href: '/',             label: 'Overview' },
-  { href: '/developments', label: 'Developments' },
+  { href: '/',             label: 'Strategy' },
+  { href: '/developments', label: 'Commercial' },
   { href: '/interiors',    label: 'Interiors' },
-  { href: '/process',      label: 'Process' },
-  { href: '/portfolio',    label: 'Portfolio' },
-  { href: '/studio',       label: 'Studio' },
+  { href: '/portfolio',    label: 'Work' },
+  { href: '/process',      label: 'Pipeline' },
+  { href: '/studio',       label: 'Brief' },
 ]
 
 export default function Header() {
@@ -39,10 +39,10 @@ export default function Header() {
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <div className="mono" style={{ color: 'var(--ink-500)', fontSize: '0.68rem' }}>
-            MIA · NYC · LON
+            COMMERCIAL · CAPITAL · LEASING
           </div>
           <Link href="/studio" className="btn btn-primary" style={{ padding: '10px 18px', fontSize: '0.72rem' }}>
-            Commission
+            Start Brief
           </Link>
         </div>
       </div>

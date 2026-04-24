@@ -34,8 +34,8 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: 'Sceneset.AI — Visualization for High-End Development',
-  description: 'We render Class-A towers, mixed-use landmarks and interior fit-outs at 8K fidelity — before a single shovel is in the ground.',
+  title: 'Sceneset.AI — Commercial Real Estate Visualization',
+  description: 'Commercial real estate visualization for capital raises, leasing, entitlements, and high-end launch campaigns.',
 }
 
 export default function RootLayout({ children }) {

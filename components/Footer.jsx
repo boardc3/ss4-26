@@ -13,26 +13,27 @@ export default function Footer() {
               </div>
             </div>
             <p className="pullquote" style={{ color: 'var(--ink-300)', maxWidth: 420, fontSize: '1.2rem' }}>
-              The visualization studio for developers, general contractors, and the architects they commission.
+              Commercial real estate visualization for developers, capital partners, leasing teams, and premium brokerage advisors.
             </p>
           </div>
 
           <div>
-            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Services</div>
+            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Commercial Toolkit</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
-              <li><Link href="/developments">Developments</Link></li>
-              <li><Link href="/interiors">Interior Fit-out</Link></li>
-              <li><Link href="/process">Process · Pipeline</Link></li>
-              <li><Link href="/portfolio">Full Portfolio</Link></li>
+              <li><Link href="/developments">Development Launch</Link></li>
+              <li><Link href="/interiors">Leasing Interiors</Link></li>
+              <li><Link href="/portfolio">Selected Work</Link></li>
+              <li><Link href="/process">Strategy Pipeline</Link></li>
             </ul>
           </div>
 
           <div>
-            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Studios</div>
+            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Use Cases</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
-              <li>Miami · 2401 Biscayne</li>
-              <li>New York · 155 Spring</li>
-              <li>London · 42 Berkeley</li>
+              <li>Capital raise decks</li>
+              <li>Retail and office leasing</li>
+              <li>Entitlement presentations</li>
+              <li>Launch websites and reels</li>
             </ul>
           </div>
 
@@ -40,8 +41,8 @@ export default function Footer() {
             <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Contact</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
               <li>studio@sceneset.ai</li>
-              <li>+1 305 · 0 · 2401</li>
-              <li className="mono" style={{ marginTop: 8 }}>MON–FRI · 08–20 ET</li>
+              <li>Priority commercial briefs</li>
+              <li className="mono" style={{ marginTop: 8 }}>CONCEPTS · FILMS · STILL CAMPAIGNS</li>
             </ul>
           </div>
         </div>
@@ -49,10 +50,10 @@ export default function Footer() {
         <div className="divider" style={{ background: 'rgba(255,255,255,0.1)' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', padding: '32px 0 0', alignItems: 'center' }}>
           <div className="mono" style={{ color: 'var(--ink-300)' }}>
-            © 2026 SCENESET VISUALIZATION CO. · EST 2021
+            © 2026 SCENESET VISUALIZATION CO.
           </div>
           <div className="mono" style={{ color: 'var(--ink-300)' }}>
-            RENDER · STAGE · PREVIEW · DELIVER
+            CAPITAL · LEASING · ENTITLEMENTS · LAUNCH
           </div>
         </div>
       </div>
