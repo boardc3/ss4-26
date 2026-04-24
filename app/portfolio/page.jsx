@@ -27,12 +27,12 @@ export default function PortfolioPage() {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 48 }}>
             <div className="eyebrow brass">Selected Work</div>
-            <div className="mono">COMMERCIAL-FIRST INDEX</div>
+            <div className="mono">RENDERINGS FOR SALES, LEASING, AND ROI</div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr', gap: 60, alignItems: 'end', marginBottom: 52 }}>
-            <h1 className="fu fu-1 display">Work with<br /><span className="serif-italic hl-brass">commercial intent.</span></h1>
+            <h1 className="fu fu-1 display">Visual proof for<br /><span className="serif-italic hl-brass">higher-value conversion.</span></h1>
             <p className="fu fu-2 pullquote" style={{ maxWidth: 540 }}>
-              Assets pulled from SceneSet 10-1, SS videos, Pinnacle Ithaca, Annapolis, Alewive, and White Deer, reorganized as a commercial real estate proof library.
+              Each project shows how raw inputs become targeted campaign assets for leasing, sales conversations, capital decks, approvals, repositioning, and launch.
             </p>
           </div>
 
@@ -101,7 +101,7 @@ export default function PortfolioPage() {
         <section style={{ padding: '30px 40px 90px' }}>
           <div className="container">
             <div style={{ display: 'grid', gridTemplateColumns: '52px 1.7fr 1fr 1fr 1fr 2fr', gap: 22, padding: '14px 0', borderBottom: '1px solid var(--rule)' }}>
-              {['#', 'Project', 'Category', 'Type', 'Year', 'Commercial Use'].map(item => (
+              {['#', 'Project', 'Category', 'Type', 'Year', 'Value Created'].map(item => (
                 <div key={item} className="eyebrow">{item}</div>
               ))}
             </div>

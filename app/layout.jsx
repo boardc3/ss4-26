@@ -34,8 +34,8 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: 'Sceneset.AI — Commercial Real Estate Visualization',
-  description: 'Commercial real estate visualization for capital raises, leasing, entitlements, and high-end launch campaigns.',
+  title: 'Sceneset.AI — Renderings for Sales, Leasing, and ROI',
+  description: 'Expert-led rendering, film, and visual strategy for commercial real estate teams seeking stronger sales material, faster leasing momentum, and measurable ROI.',
 }
 
 export default function RootLayout({ children }) {

@@ -7,10 +7,10 @@ export const metadata = {
 }
 
 const deliverables = [
-  ['Hero Film', '60-90 second commercial narrative for the launch site, investor room, and broker presentations.'],
-  ['Cutdowns', 'Short-form social, paid media, leasing follow-up, and stakeholder update edits.'],
-  ['Still Campaign', 'Hero stills, detail crops, posters, thumbnails, and print-ready deck imagery.'],
-  ['Use-Case Copy', 'Positioning language that explains the asset through capital, tenant, buyer, and civic lenses.'],
+  ['Hero Film', 'A concise visual argument for the launch site, sales gallery, broker presentation, investor room, and leasing campaign.'],
+  ['Cutdowns', 'Short-form edits designed for paid media, tenant follow-up, buyer nurture, stakeholder updates, and social proof.'],
+  ['Still Campaign', 'Hero stills, detail crops, posters, thumbnails, and print-ready imagery built from the strongest render moments.'],
+  ['Use-Case Copy', 'Positioning language that connects the visuals to sales, leasing, capital, tenant, buyer, civic, and owner value.'],
 ]
 
 export default function ProcessPage() {
@@ -19,14 +19,14 @@ export default function ProcessPage() {
       <section style={{ padding: '80px 40px 50px' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 48 }}>
-            <div className="eyebrow brass">Commercial Pipeline</div>
-            <div className="mono">SOURCE · STRATEGY · SCENE · MOTION · DELIVERY</div>
+            <div className="eyebrow brass">How SceneSet Works</div>
+            <div className="mono">TOOLING · DIRECTION · SALES · LEASING · ROI</div>
           </div>
           <h1 className="fu fu-1 display" style={{ maxWidth: 1100, marginBottom: 36 }}>
-            A launch system,<br />not a render queue.
+            Advanced production,<br />guided by revenue strategy.
           </h1>
           <p className="fu fu-2 pullquote" style={{ maxWidth: 760 }}>
-            The process starts with deal intent. Every frame is mapped to a commercial job: raise confidence, pre-lease space, clarify approvals, or reposition value.
+            We pair best-in-class rendering and motion tools with years of real estate marketing experience, then use algorithmically assisted guidance to decide which visuals can best support sales, leasing, pricing, and conversion.
           </p>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function ProcessPage() {
       <section style={{ padding: '30px 40px 90px' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20 }}>
-            <MediaFrame src={media.heroVideo} poster={media.heroPoster} video aspect="16 / 9" badge="Motion System" badgeBrass="Commercial" />
+            <MediaFrame src={media.heroVideo} poster={media.heroPoster} video aspect="16 / 9" badge="Production System" badgeBrass="Commercial" />
             <div style={{ display: 'grid', gap: 20 }}>
               <MediaFrame src={media.bktPoster} aspect="4 / 3" badge="Workplace" />
               <MediaFrame src={media.annapolisPlaza} aspect="4 / 3" badge="Public Realm" />
@@ -47,8 +47,8 @@ export default function ProcessPage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>01 / Pipeline</div>
-              <h2 className="display">Five phases from<br /><span className="serif-italic hl-brass">source to campaign.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>01 / Production Method</div>
+              <h2 className="display">From raw inputs<br /><span className="serif-italic hl-brass">to persuasive output.</span></h2>
             </div>
           </div>
           <div className="card-soft" style={{ padding: '18px 38px' }}>
@@ -73,7 +73,7 @@ export default function ProcessPage() {
           <div className="section-head">
             <div>
               <div className="section-num" style={{ marginBottom: 14 }}>02 / Deliverables</div>
-              <h2 className="display">Everything needed<br /><span className="serif-italic hl-brass">to go to market.</span></h2>
+              <h2 className="display">Assets built for<br /><span className="serif-italic hl-brass">the channels that close.</span></h2>
             </div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
@@ -92,12 +92,12 @@ export default function ProcessPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
             <div>
-              <div className="eyebrow brass" style={{ marginBottom: 26, color: 'var(--brass-400)' }}>03 / Source Agnostic</div>
-              <h2 className="display" style={{ marginBottom: 24 }}>Plans, videos, screenshots, stills, or almost nothing.</h2>
+              <div className="eyebrow brass" style={{ marginBottom: 26, color: 'var(--brass-400)' }}>03 / Source Intelligence</div>
+              <h2 className="display" style={{ marginBottom: 24 }}>We extract value from whatever you have.</h2>
               <p className="pullquote" style={{ color: 'var(--ink-300)', fontSize: '1.35rem', marginBottom: 32 }}>
-                SceneSet 10-1 case studies prove the pipeline can turn sparse inputs into persuasive output. For commercial real estate, that means faster path from messy materials to a polished market story.
+                CAD files, screenshots, drone clips, floorplans, old renders, or a half-formed deck can all become usable source. Our process identifies the strongest sales and leasing story inside the material and renders it at the level the market expects.
               </p>
-              <Link href="/studio" className="btn btn-ghost-light">Send Source Materials</Link>
+              <Link href="/studio" className="btn btn-ghost-light">Send Your Source</Link>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
               <MediaFrame src={media.whiteDeerExterior} aspect="4 / 5" badge="Sparse Input" />

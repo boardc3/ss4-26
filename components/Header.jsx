@@ -39,10 +39,10 @@ export default function Header() {
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <div className="mono" style={{ color: 'var(--ink-500)', fontSize: '0.68rem' }}>
-            COMMERCIAL · CAPITAL · LEASING
+            SALES · LEASING · ROI
           </div>
           <Link href="/studio" className="btn btn-primary" style={{ padding: '10px 18px', fontSize: '0.72rem' }}>
-            Start Brief
+            Scope ROI
           </Link>
         </div>
       </div>

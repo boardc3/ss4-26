@@ -5,9 +5,9 @@ import MediaFrame from '@/components/MediaFrame'
 import { media } from '@/lib/commercialContent'
 
 const steps = [
-  { key: 'Asset', label: 'What are we selling?' },
-  { key: 'Audience', label: 'Who needs to believe?' },
-  { key: 'Materials', label: 'What source exists?' },
+  { key: 'Asset', label: 'What revenue outcome matters?' },
+  { key: 'Audience', label: 'Who needs to act?' },
+  { key: 'Materials', label: 'What can we build from?' },
 ]
 
 const programs = ['Mixed-Use', 'Class-A Office', 'Retail District', 'Hospitality', 'Multifamily', 'Adaptive Reuse']
@@ -34,14 +34,14 @@ export default function StudioPage() {
       <section style={{ padding: '80px 40px 40px' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 48 }}>
-            <div className="eyebrow brass">Commercial Brief</div>
+            <div className="eyebrow brass">ROI-Driven Render Brief</div>
             <div className="mono">STEP {step + 1} / 3</div>
           </div>
           <h1 className="fu fu-1 display" style={{ maxWidth: 1180, marginBottom: 24 }}>
-            Start with the deal,<br />then build the <span className="serif-italic hl-brass">visual system.</span>
+            Start with the sale or lease,<br />then build the <span className="serif-italic hl-brass">visual proof.</span>
           </h1>
           <p className="fu fu-2 pullquote" style={{ maxWidth: 720 }}>
-            A commercial brief should tell us the asset, the audience, the source material, and the moment this package needs to win.
+            Tell us what the asset needs to accomplish commercially. We will translate the source material into renderings, films, and presentation assets designed around the sale, lease, pricing conversation, or capital milestone you need to influence.
           </p>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function StudioPage() {
           <div className="card" style={{ padding: '44px 50px' }}>
             {step === 0 && (
               <div className="fu">
-                <div className="eyebrow brass" style={{ marginBottom: 36 }}>01 / Asset</div>
+                <div className="eyebrow brass" style={{ marginBottom: 36 }}>01 / Asset + Revenue Objective</div>
                 <div style={{ display: 'grid', gap: 30 }}>
                   <div>
                     <label className="eyebrow" style={{ display: 'block', marginBottom: 10 }}>Your name</label>
@@ -85,7 +85,7 @@ export default function StudioPage() {
                     <input value={form.email} onChange={event => update('email', event.target.value)} placeholder="alex@company.com" />
                   </div>
                   <div>
-                    <label className="eyebrow" style={{ display: 'block', marginBottom: 10 }}>Asset / address</label>
+                    <label className="eyebrow" style={{ display: 'block', marginBottom: 10 }}>Asset / address / sales or leasing goal</label>
                     <input value={form.address} onChange={event => update('address', event.target.value)} placeholder="Annapolis Plaza, 000 Main Street" />
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export default function StudioPage() {
 
             {step === 1 && (
               <div className="fu">
-                <div className="eyebrow brass" style={{ marginBottom: 36 }}>02 / Audience</div>
+                <div className="eyebrow brass" style={{ marginBottom: 36 }}>02 / Decision Audience</div>
                 <div style={{ display: 'grid', gap: 34 }}>
                   <div>
                     <label className="eyebrow" style={{ display: 'block', marginBottom: 14 }}>Program</label>
@@ -105,7 +105,7 @@ export default function StudioPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="eyebrow" style={{ display: 'block', marginBottom: 14 }}>Primary audience</label>
+                    <label className="eyebrow" style={{ display: 'block', marginBottom: 14 }}>Primary conversion audience</label>
                     <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                       {audiences.map(item => (
                         <button key={item} className={`chip${form.audience === item ? ' active' : ''}`} onClick={() => update('audience', item)}>{item}</button>
@@ -126,20 +126,20 @@ export default function StudioPage() {
 
             {step === 2 && (
               <div className="fu">
-                <div className="eyebrow brass" style={{ marginBottom: 36 }}>03 / Source Materials</div>
+                <div className="eyebrow brass" style={{ marginBottom: 36 }}>03 / Source + Desired Outcome</div>
                 <div style={{ display: 'grid', gap: 28 }}>
                   <div>
-                    <label className="eyebrow" style={{ display: 'block', marginBottom: 10 }}>What do you have?</label>
+                    <label className="eyebrow" style={{ display: 'block', marginBottom: 10 }}>What do you have, and what needs to happen?</label>
                     <textarea
                       value={form.materials}
                       onChange={event => update('materials', event.target.value)}
                       rows={7}
-                      placeholder="CAD, Revit, drone footage, stills, floorplans, old renders, tenant mix, deck, deadline, brand references..."
+                      placeholder="CAD, Revit, drone footage, stills, floorplans, old renders, tenant mix, current deck, target buyer or tenant, pricing goal, lease-up goal, deadline, brand references..."
                       style={{ resize: 'vertical' }}
                     />
                   </div>
                   <div style={{ padding: 24, background: 'var(--bg-paper)', border: '1px solid var(--rule)' }}>
-                    <div className="eyebrow brass" style={{ marginBottom: 14 }}>Brief Snapshot</div>
+                    <div className="eyebrow brass" style={{ marginBottom: 14 }}>ROI Snapshot</div>
                     <div className="mono" style={{ color: 'var(--ink-700)', lineHeight: 1.85, fontSize: '0.82rem' }}>
                       {form.name || '(name)'} · {form.company || '(company)'}<br />
                       {form.address || '(asset / address)'}<br />
@@ -155,8 +155,8 @@ export default function StudioPage() {
               {step < 2 ? (
                 <button className="btn btn-primary" onClick={() => setStep(step + 1)}>Continue</button>
               ) : (
-                <button className="btn btn-primary" onClick={() => alert('Commercial brief captured. A SceneSet director will follow up with scope and next steps.')}>
-                  Submit Commercial Brief
+                <button className="btn btn-primary" onClick={() => alert('Brief captured. A SceneSet director will follow up with the render strategy most likely to support your sales, leasing, and ROI goals.')}>
+                  Submit Render Brief
                 </button>
               )}
             </div>

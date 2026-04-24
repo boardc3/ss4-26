@@ -7,10 +7,10 @@ export const metadata = {
 }
 
 const packages = [
-  ['Launch Film', 'A hero narrative for website, investor room, sales gallery, and broker outreach.'],
-  ['Leasing Stills', 'Exterior arrival, storefront, lobby, suite, amenity, and day-to-night moments.'],
-  ['Investor Deck Assets', 'Clean visual proof for pro formas, memoranda, capital partner updates, and board meetings.'],
-  ['Entitlement Support', 'Pedestrian-scale public realm scenes that clarify activation, traffic, access, and neighborhood value.'],
+  ['Launch Film', 'A polished visual thesis for the asset: what it is, who it is for, and why buyers, tenants, and brokers should act.'],
+  ['Leasing Stills', 'High-fidelity scenes that support tenant outreach, broker follow-up, rate strategy, and pre-leasing before delivery.'],
+  ['Sales Deck Assets', 'Strategic visual proof for owner presentations, buyer conversations, leasing decks, partner updates, and capital memoranda.'],
+  ['Entitlement Support', 'Pedestrian-scale scenes that reduce ambiguity around activation, access, scale, light, and neighborhood benefit.'],
 ]
 
 export default function DevelopmentsPage() {
@@ -19,18 +19,18 @@ export default function DevelopmentsPage() {
       <section style={{ padding: '80px 40px 60px' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 48 }}>
-            <div className="eyebrow brass">Commercial Development</div>
-            <div className="mono">CAPITAL · LEASING · ENTITLEMENTS · LAUNCH</div>
+            <div className="eyebrow brass">Commercial Development Visualization</div>
+            <div className="mono">RENDER · POSITION · PROVE · CONVERT</div>
           </div>
           <h1 className="fu fu-1 display" style={{ maxWidth: 1180, marginBottom: 40 }}>
-            Render the district,<br />not just the <span className="serif-italic hl-brass">building.</span>
+            Build the visual case<br />for faster <span className="serif-italic hl-brass">sales and leases.</span>
           </h1>
           <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 80, alignItems: 'end' }}>
             <p className="fu fu-2 pullquote" style={{ maxWidth: 680 }}>
-              Commercial value is made at the threshold: the sidewalk, the lobby, the suite, the terrace, the restaurant, the event, the evening return. SceneSet builds that full sequence.
+              We combine advanced rendering workflows, senior creative judgment, and data-informed production guidance to show the asset in the moments that influence revenue: buyer interest, tenant conviction, broker follow-up, pricing, approvals, and launch.
             </p>
             <div className="fu fu-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 30 }}>
-              {[['4+', 'buyer audiences'], ['7', 'asset sources'], ['1', 'unified campaign']].map(([v, k]) => (
+              {[['4+', 'revenue audiences'], ['7', 'source libraries'], ['1', 'ROI-focused story']].map(([v, k]) => (
                 <div key={k}>
                   <div className="stat-num brass" style={{ fontSize: '2rem', marginBottom: 6 }}>{v}</div>
                   <div className="mono" style={{ color: 'var(--ink-500)' }}>{k}</div>
@@ -48,8 +48,8 @@ export default function DevelopmentsPage() {
             aspect="21 / 9"
             badge="Annapolis Plaza"
             badgeBrass="Retail District"
-            metaTitle="A commercial place-making story built around arrival, frontage, dining, and gathering"
-            metaSub="Source assets pulled into SS426 from Annapolis"
+            metaTitle="A retail destination translated into sales, leasing, and tenant demand"
+            metaSub="Arrival, frontage, social energy, and place-making rendered for commercial conversion"
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 18, marginTop: 22 }}>
             <MediaFrame src={media.annapolisEntry} aspect="4 / 3" badge="Retail Entry" />
@@ -64,8 +64,8 @@ export default function DevelopmentsPage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>01 / What We Package</div>
-              <h2 className="display">Commercial campaigns<br /><span className="serif-italic hl-brass">with a sales job.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>01 / What We Build</div>
+              <h2 className="display">Commercial assets<br /><span className="serif-italic hl-brass">designed to sell.</span></h2>
             </div>
           </div>
 
@@ -85,8 +85,8 @@ export default function DevelopmentsPage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>02 / Commercial Services</div>
-              <h2 className="display">From source files<br />to <span className="serif-italic hl-brass">market belief.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>02 / Our Method</div>
+              <h2 className="display">From technical inputs<br />to <span className="serif-italic hl-brass">revenue momentum.</span></h2>
             </div>
           </div>
 
@@ -107,7 +107,7 @@ export default function DevelopmentsPage() {
                 <div className="mono hl-brass" style={{ marginBottom: 16 }}>SERVICE · {service.number}</div>
                 <h2 className="display" style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)', marginBottom: 20 }}>{service.title}</h2>
                 <p className="pullquote" style={{ fontSize: '1.35rem', marginBottom: 26 }}>{service.summary}</p>
-                <Link href="/studio" className="btn btn-ghost">Scope This Package</Link>
+                <Link href="/studio" className="btn btn-ghost">Scope the ROI</Link>
               </div>
             </div>
           ))}
@@ -118,8 +118,8 @@ export default function DevelopmentsPage() {
         <div className="container">
           <div className="section-head" style={{ borderBottomColor: 'rgba(255,255,255,0.14)' }}>
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>03 / Use Cases</div>
-              <h2 className="display">Why commercial teams<br /><span className="serif-italic" style={{ color: 'var(--brass-400)' }}>commission SceneSet.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>03 / Commercial Return</div>
+              <h2 className="display">Why stronger visuals<br /><span className="serif-italic" style={{ color: 'var(--brass-400)' }}>help close business.</span></h2>
             </div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
@@ -138,9 +138,9 @@ export default function DevelopmentsPage() {
         <div className="container-narrow">
           <div className="eyebrow brass" style={{ marginBottom: 24 }}>Commercial Brief</div>
           <h2 className="display" style={{ marginBottom: 36 }}>
-            Build the case for the asset<br /><span className="serif-italic hl-brass">before the asset exists.</span>
+            Give sales and leasing teams the proof<br /><span className="serif-italic hl-brass">they cannot get from plans alone.</span>
           </h2>
-          <Link href="/studio" className="btn btn-primary">Begin Commercial Brief</Link>
+          <Link href="/studio" className="btn btn-primary">Begin the Brief</Link>
         </div>
       </section>
     </div>

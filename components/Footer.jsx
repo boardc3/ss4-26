@@ -13,27 +13,27 @@ export default function Footer() {
               </div>
             </div>
             <p className="pullquote" style={{ color: 'var(--ink-300)', maxWidth: 420, fontSize: '1.2rem' }}>
-              Commercial real estate visualization for developers, capital partners, leasing teams, and premium brokerage advisors.
+              Advanced renderings, films, and visual strategy for commercial real estate teams that need stronger sales material, faster leasing momentum, and clearer ROI.
             </p>
           </div>
 
           <div>
-            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Commercial Toolkit</div>
+            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>What We Build</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
-              <li><Link href="/developments">Development Launch</Link></li>
-              <li><Link href="/interiors">Leasing Interiors</Link></li>
+              <li><Link href="/developments">Render Campaigns</Link></li>
+              <li><Link href="/interiors">Interior Visualization</Link></li>
               <li><Link href="/portfolio">Selected Work</Link></li>
               <li><Link href="/process">Strategy Pipeline</Link></li>
             </ul>
           </div>
 
           <div>
-            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Use Cases</div>
+            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Value Created</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
-              <li>Capital raise decks</li>
-              <li>Retail and office leasing</li>
-              <li>Entitlement presentations</li>
-              <li>Launch websites and reels</li>
+              <li>Stronger sales conversations</li>
+              <li>Higher leasing confidence</li>
+              <li>Better pricing support</li>
+              <li>Launch assets that convert</li>
             </ul>
           </div>
 
@@ -41,8 +41,8 @@ export default function Footer() {
             <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Contact</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
               <li>studio@sceneset.ai</li>
-              <li>Priority commercial briefs</li>
-              <li className="mono" style={{ marginTop: 8 }}>CONCEPTS · FILMS · STILL CAMPAIGNS</li>
+              <li>Priority render strategy briefs</li>
+              <li className="mono" style={{ marginTop: 8 }}>RENDERINGS · FILMS · ROI STRATEGY</li>
             </ul>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Footer() {
             © 2026 SCENESET VISUALIZATION CO.
           </div>
           <div className="mono" style={{ color: 'var(--ink-300)' }}>
-            CAPITAL · LEASING · ENTITLEMENTS · LAUNCH
+            ADVANCED RENDERING · SALES ENABLEMENT · LEASING ROI
           </div>
         </div>
       </div>
