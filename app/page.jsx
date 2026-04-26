@@ -11,52 +11,54 @@ export default function HomePage() {
 
   return (
     <div className="page-fade">
-      <section style={{ paddingTop: 30, paddingBottom: 90 }}>
-        <div className="container" style={{ padding: '0 40px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 64, alignItems: 'end', marginBottom: 42 }}>
-            <div>
-              <div className="fu fu-1 eyebrow brass" style={{ marginBottom: 28 }}>
-                Renderings and films built to move real estate decisions
-              </div>
-              <h1 className="fu fu-2 display">
-                Turn plans into<br />
-                <span className="serif-italic hl-brass">sales, leases, and ROI.</span>
-              </h1>
+      <section className="hyper-hero">
+        <div className="hyper-glow hyper-glow-a" />
+        <div className="hyper-glow hyper-glow-b" />
+        <div className="hyper-grid" />
+
+        <div className="container hyper-hero-inner">
+          <div className="hyper-copy">
+            <div className="fu fu-1 eyebrow brass hyper-kicker">
+              HyperFrames for commercial real estate launches
             </div>
-            <div className="fu fu-3" style={{ display: 'grid', gap: 22, paddingBottom: 10 }}>
-              <p className="pullquote" style={{ maxWidth: 540 }}>
-                SceneSet creates high-end renderings, films, and campaign assets that help developers, brokers, and owners sell the vision, lease the space, justify the price, and convert interest into action.
-              </p>
-              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 6 }}>
-                <Link href="/studio" className="btn btn-primary">Scope a High-ROI Package</Link>
-                <Link href="/portfolio" className="btn btn-ghost">See the Work</Link>
-              </div>
+            <h1 className="fu fu-2 display hyper-title">
+              Make the unbuilt feel<br />
+              <span className="serif-italic">impossible to ignore.</span>
+            </h1>
+            <p className="fu fu-3 hyper-lede">
+              SceneSet turns plans, decks, drone clips, and rough design direction into cinematic selling systems that help developers, brokers, and owners create demand before the asset is finished.
+            </p>
+            <div className="fu fu-4 hyper-actions">
+              <Link href="/studio" className="btn btn-brass">Build My Launch System</Link>
+              <Link href="/portfolio" className="btn btn-ghost-light">Watch the Proof</Link>
             </div>
           </div>
 
-          <MediaFrame
-            src={media.heroVideo}
-            poster={media.heroPoster}
-            video
-            aspect="21 / 9"
-            badge="Render Campaign Reel"
-            badgeBrass="Strategy + Production"
-            metaTitle="Advanced visualization for sales, leasing, capital, entitlements, and launch"
-            metaSub="Cinematic renderings, motion, stills, and strategy built around commercial return"
-          />
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderTop: '1px solid var(--rule)', marginTop: 32 }}>
-            {proofStats.map(([value, label], i) => (
-              <div key={label} className="fu" style={{
-                animationDelay: `${500 + i * 90}ms`,
-                padding: '30px 26px',
-                borderRight: i < proofStats.length - 1 ? '1px solid var(--rule)' : 'none',
-              }}>
-                <div className="stat-num brass" style={{ fontSize: '2.45rem', marginBottom: 10 }}>{value}</div>
-                <div className="mono" style={{ color: 'var(--ink-500)', lineHeight: 1.6 }}>{label}</div>
+          <div className="fu fu-3 hyper-stage" aria-label="Commercial real estate visualization system">
+            <div className="hyper-frame hyper-frame-main">
+              <video src={media.heroVideo} poster={media.heroPoster} autoPlay muted loop playsInline />
+              <div className="hyper-scan" />
+              <div className="hyper-caption">
+                <span>SceneSet HyperFrames</span>
+                <strong>Visuals built for sales, leasing, and capital conversations.</strong>
               </div>
-            ))}
+            </div>
+
+            <div className="hyper-value-strip">
+              <span>Launch earlier</span>
+              <span>Lease faster</span>
+              <span>Defend premium pricing</span>
+            </div>
           </div>
+        </div>
+
+        <div className="container hyper-proof">
+          {proofStats.map(([value, label], i) => (
+            <div key={label} className="hyper-proof-card fu" style={{ animationDelay: `${560 + i * 90}ms` }}>
+              <div className="hyper-proof-value">{value}</div>
+              <div className="mono">{label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
