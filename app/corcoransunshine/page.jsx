@@ -75,32 +75,38 @@ const PIPELINE_STEPS = [
     n: '01',
     title: 'Source Intelligence',
     body: 'We absorb CAD, Revit, Rhino, plans, drone clips, brand guidelines, comps, and the offering memo. The asset becomes legible to our team end-to-end.',
-    time: 'Week 1',
+    time: 'Days 1–2',
   },
   {
     n: '02',
     title: 'Sales Strategy',
     body: 'We lock the audience, the conversion moment, and the visual proof needed. Camera moves and scene hierarchy are designed against velocity, not vanity.',
-    time: 'Week 1–2',
+    time: 'Days 2–4',
   },
   {
     n: '03',
     title: 'Render Production',
     body: 'Architecture, materiality, landscape, lighting, signage, and people built scene-by-scene with senior creative direction at every checkpoint.',
-    time: 'Week 2–4',
+    time: 'Production phase',
   },
   {
     n: '04',
     title: 'Directed Refinement',
     body: 'Studio review with your team. We refine pacing, sequence, and detail where it matters: model residence, amenity floors, and the buyer arrival sequence.',
-    time: 'Week 4–5',
+    time: 'Final week',
   },
   {
     n: '05',
     title: 'Market Delivery',
     body: 'A complete toolkit: stills, hero film, cutdowns, vertical edits, posters, loops, and presentation-ready exports for sales gallery, broker, web, and paid media.',
-    time: 'Week 5–6',
+    time: 'Final days',
   },
+]
+
+const PIPELINE_TOTALS = [
+  { tier: 'Standard',  weeks: '2 weeks',  note: 'fastest cadence'      },
+  { tier: 'Enhanced',  weeks: '3 weeks',  note: 'most popular'         },
+  { tier: 'Premium',   weeks: '4 weeks',  note: 'with custom 3D scope' },
 ]
 
 const TIERS = [
@@ -109,7 +115,7 @@ const TIERS = [
     title: 'Standard Package',
     body: 'Best for small and medium developments. A complete cinematic and stills package designed to anchor a single launch moment.',
     price: '$19,375',
-    priceLabel: 'Fixed engagement',
+    priceLabel: 'Fixed engagement · 2 weeks',
     items: [
       '1 marquee edited video (~60–90 seconds, 10–12 environments)',
       '10–12 accompanying short videos for web and social',
@@ -121,7 +127,7 @@ const TIERS = [
     title: 'Enhanced Package',
     body: 'Best for medium and large developments. The standard package extended with audience-targeted films, floorplan-level sales tools, and a delivered marketing website.',
     price: '$35,500',
-    priceLabel: 'Fixed engagement',
+    priceLabel: 'Fixed engagement · 3 weeks',
     items: [
       'Everything in the Standard Package',
       '2 additional marquee videos for areas of focus (exterior, amenities) or audience segments (families, students, age groups)',
@@ -136,7 +142,7 @@ const TIERS = [
     title: 'Premium Package',
     body: 'Best for flagship mixed-use developments. Built for the highest-stakes launches where the asset has to feel inevitable across every channel — including a fully custom 3D experience.',
     price: 'From $60,500',
-    priceLabel: 'Scoped to complexity',
+    priceLabel: 'Scoped to complexity · 4 weeks',
     items: [
       'Everything in the Standard and Enhanced Packages',
       'Sales Hub with third-party CRM integration (HubSpot or existing corporate CRM)',
@@ -178,7 +184,7 @@ const NEXT_STEPS = [
   {
     n: '02',
     title: 'Pilot Asset',
-    body: 'A single, high-leverage asset (hero film or residence suite) produced inside four weeks so your team can pressure-test the system live.',
+    body: 'A single, high-leverage Standard or Enhanced engagement, delivered in two to three weeks so your team can pressure-test the system live before scaling.',
   },
   {
     n: '03',
@@ -347,7 +353,7 @@ function TransformSlide(props) {
             </svg>
           </div>
           <div className="line" />
-          <span>4–6 Weeks</span>
+          <span>2–4 Weeks</span>
         </div>
 
         <div className="io-side deck-fade" style={{ '--d': 600 }}>
@@ -404,7 +410,7 @@ function PipelineSlide(props) {
   return (
     <ContentSlide
       {...props}
-      header={<>A <span className="accent">six-week</span> production cadence.</>}
+      header={<>A <span className="accent">two-to-four week</span> production cadence.</>}
       lede="Predictable, sequenced, and built to align with your launch calendar. Hover or click any step to dwell on it — or let the deck advance on its own."
     >
       <div className="pipeline-row">
@@ -420,6 +426,17 @@ function PipelineSlide(props) {
             <h5>{s.title}</h5>
             <p>{s.body}</p>
             <div className="pipe-time">{s.time}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="pipeline-totals deck-fade" style={{ '--d': 720 }}>
+        <div className="pt-label">End-to-end timeline</div>
+        {PIPELINE_TOTALS.map(t => (
+          <div key={t.tier} className="pt-tier">
+            <div className="pt-tier-name">{t.tier}</div>
+            <div className="pt-tier-weeks">{t.weeks}</div>
+            <div className="pt-tier-note">{t.note}</div>
           </div>
         ))}
       </div>
