@@ -1114,6 +1114,10 @@ body[data-presentation] { overflow: hidden; }
   object-fit: cover;
   filter: saturate(1.1) contrast(1.04) brightness(0.55);
   animation: heroZoom 16s ease-in-out infinite alternate;
+  transition: filter 1600ms cubic-bezier(.4, 0, .2, 1);
+}
+.deck-cover.is-revealed .deck-cover-video video {
+  filter: saturate(1.08) contrast(1.02) brightness(1);
 }
 .deck-cover-video::after {
   content: '';
