@@ -279,7 +279,7 @@ function ContextSlide(props) {
         <div className="deck-fade" style={{ '--d': 480 }}>
           <div style={{ position: 'relative', aspectRatio: '16 / 10', overflow: 'hidden', border: '1px solid var(--rule)', background: 'var(--bg-stone)' }}>
             <video
-              src={media.pinnacleEntryVideo}
+              src={media.pinnacleRoomsVideo}
               poster={media.pinnacleHeader}
               autoPlay
               muted
