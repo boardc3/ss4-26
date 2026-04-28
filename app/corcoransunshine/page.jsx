@@ -106,45 +106,42 @@ const PIPELINE_STEPS = [
 const TIERS = [
   {
     num: 'TIER 01',
-    title: 'Single Asset Engagement',
-    body: 'Built for a focused launch moment, repositioning, or one priority residence. Tight, premium, designed to ship inside a single phase.',
-    price: '$48–$95K',
-    priceLabel: 'Per asset · 4–6 weeks',
+    title: 'Standard Package',
+    body: 'Best for small and medium developments. A complete cinematic and stills package designed to anchor a single launch moment.',
+    price: '$19,375',
+    priceLabel: 'Fixed engagement',
     items: [
-      'One 60–90s cinematic hero film',
-      '8–12 photoreal stills (exterior + interior)',
-      'Web hero + 3 social cutdowns',
-      'Two rounds senior creative review',
+      '1 marquee edited video (~60–90 seconds, 10–12 environments)',
+      '10–12 accompanying short videos for web and social',
+      '20 still photo renderings',
     ],
   },
   {
     num: 'TIER 02',
-    title: 'Launch Package',
-    body: 'The complete launch system. Designed for a tower or development team that needs everything sales, brokers, capital, and press will touch in the first 90 days.',
-    price: '$140–$240K',
-    priceLabel: 'Per launch · 8–12 weeks',
+    title: 'Enhanced Package',
+    body: 'Best for medium and large developments. The standard package extended with audience-targeted films, floorplan-level sales tools, and a delivered marketing website.',
+    price: '$35,500',
+    priceLabel: 'Fixed engagement',
     items: [
-      'Hero film + amenity film + 2 residence films',
-      '24–32 stills across exterior, lifestyle, residence',
-      'Microsite, deck, gallery, and broker cuts',
-      'Senior creative direction throughout launch',
-      'In-contract refresh assets included',
+      'Everything in the Standard Package',
+      '2 additional marquee videos for areas of focus (exterior, amenities) or audience segments (families, students, age groups)',
+      'Styled photos and videos for individual floorplans, used as in-tour sales tools',
+      'Marketing website with property information, videos, images, nearby points of interest, and contact form',
     ],
     feature: true,
-    tag: 'Recommended',
+    tag: 'Most Popular',
   },
   {
     num: 'TIER 03',
-    title: 'Marketing System Retainer',
-    body: 'For developers and marketing groups running multiple assets in market simultaneously. A continuous creative and production system across the portfolio.',
-    price: 'From $35K/mo',
-    priceLabel: 'Quarterly engagement',
+    title: 'Premium Package',
+    body: 'Best for flagship mixed-use developments. Built for the highest-stakes launches where the asset has to feel inevitable across every channel — including a fully custom 3D experience.',
+    price: 'From $60,500',
+    priceLabel: 'Scoped to complexity',
     items: [
-      'Dedicated creative + production team',
-      'Up to 3 active towers in pipeline',
-      'Monthly visual strategy review',
-      'Priority 2-business-day brief turnaround',
-      'Portfolio-wide visual consistency',
+      'Everything in the Standard and Enhanced Packages',
+      'Sales Hub with third-party CRM integration (HubSpot or existing corporate CRM)',
+      'Custom 3D experience',
+      'Final pricing depends on 3D experience complexity, integrations, and supporting deliverables',
     ],
   },
 ]
@@ -463,7 +460,7 @@ function TiersSlide(props) {
     <ContentSlide
       {...props}
       header={<>Three ways to <span className="accent">engage the studio.</span></>}
-      lede="Pricing assumes Corcoran Sunshine's typical asset profile: luxury condominium, full-floor or duplex residences, ticket sizes from $5M to $40M+. Every engagement starts with a no-fee scoping conversation."
+      lede="Transparent, fixed pricing across three service packages calibrated to development scale. Every engagement starts with a no-fee scoping conversation to align deliverables with the launch calendar and the asset's positioning."
     >
       <div className="deck-grid-3">
         {TIERS.map((t, i) => (
@@ -481,6 +478,9 @@ function TiersSlide(props) {
             </ul>
           </div>
         ))}
+      </div>
+      <div className="deck-fade mono" style={{ '--d': 640, marginTop: 26, color: 'var(--ink-500)', textAlign: 'center' }}>
+        Pricing for additional deliverables — including custom digital ads or out-of-home campaigns — available upon request for any tier.
       </div>
     </ContentSlide>
   )
