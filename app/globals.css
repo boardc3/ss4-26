@@ -1122,12 +1122,28 @@ body[data-presentation] { overflow: hidden; }
   background:
     linear-gradient(180deg, rgba(17, 32, 26, 0.62) 0%, rgba(17, 32, 26, 0.42) 40%, rgba(17, 32, 26, 0.85) 100%),
     radial-gradient(circle at 22% 28%, rgba(196, 162, 103, 0.18), transparent 42%);
+  transition: opacity 1600ms cubic-bezier(.4, 0, .2, 1);
+}
+.deck-cover.is-revealed .deck-cover-video::after {
+  opacity: 0;
+}
+.deck-cover.is-revealed .hyper-grid {
+  opacity: 0;
+  transition: opacity 1600ms cubic-bezier(.4, 0, .2, 1);
 }
 .deck-cover-top,
 .deck-cover-mid,
 .deck-cover-foot {
   position: relative;
   z-index: 1;
+}
+.deck-cover-top,
+.deck-cover-foot {
+  transition: opacity 1400ms cubic-bezier(.4, 0, .2, 1);
+}
+.deck-cover.is-revealed .deck-cover-top,
+.deck-cover.is-revealed .deck-cover-foot {
+  opacity: 0.45;
 }
 .deck-cover-top {
   display: flex;
@@ -1165,6 +1181,15 @@ body[data-presentation] { overflow: hidden; }
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  transition:
+    transform 1400ms cubic-bezier(.65, 0, .35, 1),
+    opacity 900ms cubic-bezier(.4, 0, .6, 1);
+  will-change: transform, opacity;
+}
+.deck-cover.is-revealed .deck-cover-mid {
+  transform: translateY(-130%);
+  opacity: 0;
+  pointer-events: none;
 }
 .deck-cover-mid .kicker {
   font-family: var(--font-mono);

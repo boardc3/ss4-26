@@ -193,8 +193,15 @@ const NEXT_STEPS = [
 ]
 
 function Cover() {
+  const [revealed, setRevealed] = useState(false)
+
+  useEffect(() => {
+    const t = window.setTimeout(() => setRevealed(true), 5000)
+    return () => window.clearTimeout(t)
+  }, [])
+
   return (
-    <div className="deck-cover">
+    <div className={`deck-cover${revealed ? ' is-revealed' : ''}`}>
       <div className="hyper-grid" />
       <div className="deck-cover-video" aria-hidden>
         <video src={media.heroVideo} poster={media.heroPoster} autoPlay muted loop playsInline />
