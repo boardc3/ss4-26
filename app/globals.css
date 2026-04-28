@@ -1999,7 +1999,81 @@ body[data-presentation] .deck-progress.on-dark .pip.is-past { background: rgba(2
 body[data-presentation].deck-on-dark .deck-hint { color: rgba(251, 247, 237, 0.6); }
 body[data-presentation].deck-on-dark .deck-hint .key { border-color: rgba(255,255,255,0.3); color: rgba(251,247,237,0.8); }
 
-/* Deck responsive */
+/* Deck responsive — laptop-first scaling
+   Typical laptops (13-15") run 1280-1512px wide and 720-900px tall.
+   These tiers scale type, padding, and spacing down so a full slide fits
+   without scrolling on a typical laptop, while the desktop scale stays
+   reserved for larger displays. */
+@media (max-width: 1440px), (max-height: 900px) {
+  .deck-slide-inner { padding: 76px clamp(36px, 5vw, 80px) 110px; }
+  .deck-meta { margin-bottom: clamp(22px, 3vw, 40px); }
+  .deck-headline { font-size: clamp(2.4rem, 4.6vw, 4.4rem); }
+  .deck-lede { font-size: clamp(1.05rem, 1.3vw, 1.35rem); line-height: 1.4; }
+  .deck-cover { padding: 44px clamp(40px, 5vw, 80px); }
+  .deck-cover-mid h1 { font-size: clamp(2.8rem, 6.4vw, 6.4rem); line-height: 0.92; }
+  .deck-cover-mid .kicker { font-size: 0.66rem; }
+  .deck-cover-mid .for-line { padding: 11px 16px; font-size: 0.62rem; }
+  .deck-cover-mid .for-line strong { font-size: 0.95rem; }
+  .deck-cover-foot { padding-top: 18px; font-size: 0.6rem; }
+  .pillar { padding: 26px 22px 22px; }
+  .pillar h3 { font-size: clamp(1.2rem, 1.5vw, 1.5rem); margin-bottom: 10px; }
+  .pillar p { font-size: 0.86rem; margin-bottom: 16px; }
+  .pillar .deliverables { padding-top: 14px; gap: 6px; }
+  .usecase { padding: 22px 20px; gap: 16px; grid-template-columns: 60px 1fr; }
+  .usecase .uc-num { font-size: 2.1rem; }
+  .usecase h4 { font-size: 1.15rem; margin-bottom: 6px; }
+  .usecase p { font-size: 0.84rem; line-height: 1.45; }
+  .pipe-step { padding: 22px 18px 16px; }
+  .pipe-step h5 { font-size: 1.05rem; margin-bottom: 8px; }
+  .pipe-step p { font-size: 0.78rem; line-height: 1.45; }
+  .pipe-step .pipe-time { margin-top: 12px; padding-top: 10px; }
+  .pipeline-totals .pt-label,
+  .pipeline-totals .pt-tier { padding: 12px 16px; }
+  .pipeline-totals .pt-tier-name { font-size: 0.92rem; }
+  .pipeline-totals .pt-tier-weeks { font-size: 1.3rem; }
+  .pipeline-totals .pt-tier-note { font-size: 0.56rem; }
+  .io-side { padding: 18px; }
+  .io-side h3 { font-size: clamp(1.3rem, 1.7vw, 1.65rem); margin-bottom: 14px; }
+  .io-input-list span { padding: 9px 12px; font-size: 0.66rem; }
+  .io-arrow .line { height: 60px; }
+  .tier { padding: 26px 22px 22px; }
+  .tier h3 { font-size: 1.4rem; margin-bottom: 10px; }
+  .tier p { font-size: 0.86rem; margin-bottom: 16px; }
+  .tier .price { font-size: 1.3rem; margin-bottom: 16px; }
+  .tier .price em { font-size: 0.7rem; }
+  .tier ul { padding-top: 16px; gap: 8px; }
+  .tier ul li { font-size: 0.8rem; }
+  .tier .tier-tag { font-size: 0.54rem; padding: 4px 8px; }
+  .kpi { padding: 30px 24px 26px; }
+  .kpi .kpi-num { font-size: clamp(2rem, 3.4vw, 3.4rem); margin-bottom: 14px; }
+  .kpi h5 { font-size: 1.05rem; margin-bottom: 8px; }
+  .kpi p { font-size: 0.82rem; line-height: 1.45; }
+  .work-tile .meta { padding: 14px 16px; }
+  .work-tile .meta .name { font-size: 1.12rem; }
+  .work-tile .meta .sub { font-size: 0.56rem; }
+  .deck-cta-title { font-size: clamp(2.2rem, 4.4vw, 3.8rem); margin-bottom: 22px; }
+  .deck-cta-list { gap: 12px; margin: 28px 0 26px; }
+  .deck-cta-list .step { padding: 18px 18px; }
+  .deck-cta-list .step h5 { font-size: 1.05rem; }
+  .deck-cta-list .step p { font-size: 0.78rem; }
+  .deck-controls { bottom: 22px; padding: 10px 12px; gap: 10px; }
+  .deck-btn { width: 34px; height: 34px; }
+  .deck-counter { font-size: 0.65rem; padding: 0 10px; }
+  .deck-progress { top: 22px; }
+}
+
+@media (max-height: 760px) {
+  .deck-slide-inner { padding: 64px clamp(28px, 4vw, 60px) 100px; }
+  .deck-meta { margin-bottom: 18px; }
+  .deck-headline { font-size: clamp(2rem, 3.8vw, 3.4rem); }
+  .deck-lede { font-size: 0.98rem; }
+  .deck-cover-mid h1 { font-size: clamp(2.4rem, 5.6vw, 5.4rem); }
+  .pipe-step p { font-size: 0.74rem; }
+  .pillar p, .tier p, .usecase p { font-size: 0.8rem; }
+  .deck-cta-title { font-size: clamp(2rem, 3.6vw, 3rem); }
+  .deck-cta-list .step p { font-size: 0.74rem; }
+}
+
 @media (max-width: 1100px) {
   .deck-grid-2 { grid-template-columns: 1fr; gap: 26px; }
   .deck-grid-3 { grid-template-columns: 1fr; }
