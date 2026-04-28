@@ -1498,9 +1498,7 @@ body[data-presentation] { overflow: hidden; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 36px;
-  align-items: center;
-  flex: 1;
-  min-height: 0;
+  align-items: stretch;
 }
 .io-side {
   position: relative;
@@ -1509,8 +1507,6 @@ body[data-presentation] { overflow: hidden; }
   padding: 24px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 0;
 }
 .io-side h4 {
   font-family: var(--font-mono);
@@ -1555,6 +1551,7 @@ body[data-presentation] { overflow: hidden; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 14px;
   font-family: var(--font-mono);
   font-size: 0.62rem;
@@ -1593,12 +1590,12 @@ body[data-presentation] { overflow: hidden; }
   100% { transform: scale(1.55); opacity: 0; }
 }
 .io-output-frame {
-  flex: 1;
   position: relative;
   overflow: hidden;
   background: var(--bg-stone);
   border: 1px solid var(--rule);
-  min-height: 280px;
+  aspect-ratio: 16 / 10;
+  width: 100%;
 }
 .io-output-frame video,
 .io-output-frame img {
