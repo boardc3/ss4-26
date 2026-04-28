@@ -103,9 +103,9 @@ const PIPELINE_STEPS = [
 ]
 
 const PIPELINE_TOTALS = [
-  { tier: 'Standard',  weeks: '2 weeks',  note: 'fastest cadence'      },
-  { tier: 'Enhanced',  weeks: '3 weeks',  note: 'most popular'         },
-  { tier: 'Premium',   weeks: '4 weeks',  note: 'with custom 3D scope' },
+  { tier: 'Standard',  weeks: '2–4 weeks',  note: 'fastest cadence'      },
+  { tier: 'Enhanced',  weeks: '3–5 weeks',  note: 'most popular'         },
+  { tier: 'Premium',   weeks: '4–6 weeks',  note: 'with custom 3D scope' },
 ]
 
 const TIERS = [
@@ -114,7 +114,7 @@ const TIERS = [
     title: 'Standard Package',
     body: 'Best for small and medium developments. A complete cinematic and stills package designed to anchor a single launch moment.',
     price: '$19,375',
-    priceLabel: 'Fixed engagement · 2 weeks',
+    priceLabel: 'Fixed engagement · 2–4 weeks',
     items: [
       '1 marquee edited video (~60–90 seconds, 10–12 environments)',
       '10–12 accompanying short videos for web and social',
@@ -126,7 +126,7 @@ const TIERS = [
     title: 'Enhanced Package',
     body: 'Best for medium and large developments. The standard package extended with audience-targeted films, floorplan-level sales tools, and a delivered marketing website.',
     price: '$35,500',
-    priceLabel: 'Fixed engagement · 3 weeks',
+    priceLabel: 'Fixed engagement · 3–5 weeks',
     items: [
       'Everything in the Standard Package',
       '2 additional marquee videos for areas of focus (exterior, amenities) or audience segments (families, students, age groups)',
@@ -141,7 +141,7 @@ const TIERS = [
     title: 'Premium Package',
     body: 'Best for flagship mixed-use developments. Built for the highest-stakes launches where the asset has to feel inevitable across every channel — including a fully custom 3D experience.',
     price: 'From $60,500',
-    priceLabel: 'Scoped to complexity · 4 weeks',
+    priceLabel: 'Scoped to complexity · 4–6 weeks',
     items: [
       'Everything in the Standard and Enhanced Packages',
       'Sales Hub with third-party CRM integration (HubSpot or existing corporate CRM)',
@@ -183,7 +183,7 @@ const NEXT_STEPS = [
   {
     n: '02',
     title: 'Pilot Asset',
-    body: 'A single, high-leverage Standard or Enhanced engagement, delivered in two to three weeks so your team can pressure-test the system live before scaling.',
+    body: 'A single, high-leverage Standard or Enhanced engagement, delivered in two to five weeks so your team can pressure-test the system live before scaling.',
   },
   {
     n: '03',
@@ -351,7 +351,7 @@ function TransformSlide(props) {
             </svg>
           </div>
           <div className="line" />
-          <span>2–4 Weeks</span>
+          <span>2–6 Weeks</span>
         </div>
 
         <div className="io-side deck-fade" style={{ '--d': 600 }}>
@@ -408,7 +408,7 @@ function PipelineSlide(props) {
   return (
     <ContentSlide
       {...props}
-      header={<>A <span className="accent">two-to-four week</span> production cadence.</>}
+      header={<>A <span className="accent">two-to-six week</span> production cadence.</>}
       lede="Predictable, sequenced, and built to align with your launch calendar. Hover or click any step to dwell on it — or let the deck advance on its own."
     >
       <div className="pipeline-row">
