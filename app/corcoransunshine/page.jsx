@@ -518,8 +518,8 @@ function NextStepsSlide(props) {
         <div className="deck-cta-inner">
           <div className="deck-cta-eyebrow deck-fade" style={{ '--d': 80 }}>Begin with a single tower</div>
           <h2 className="deck-cta-title deck-fade" style={{ '--d': 200 }}>
-            Let's build the visual<br />
-            argument for the <em>next launch.</em>
+            Make the next project<br />
+            <em>impossible to ignore.</em>
           </h2>
           <p className="deck-lede deck-fade" style={{ '--d': 320, margin: '0 auto', maxWidth: 720 }}>
             The fastest way to evaluate the studio is to put a real launch through it. Send the next priority tower, the audience, and the moment that matters most — we'll respond with a scope inside two business days.
