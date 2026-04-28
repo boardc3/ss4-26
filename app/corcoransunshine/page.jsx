@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback, useMemo } from 'react'
-import { media, portfolio } from '@/lib/commercialContent'
+import { media } from '@/lib/commercialContent'
 
 const SLIDES = [
   { id: 'cover',     section: 'Cover',                tone: 'dark'  },
@@ -10,7 +10,6 @@ const SLIDES = [
   { id: 'transform', section: 'Inputs to Outputs',    tone: 'paper' },
   { id: 'usecases',  section: 'Where It Shows Up',    tone: 'cream' },
   { id: 'pipeline',  section: 'The Pipeline',         tone: 'paper' },
-  { id: 'work',      section: 'Selected Work',        tone: 'dark'  },
   { id: 'tiers',     section: 'Engagement Models',    tone: 'cream' },
   { id: 'outcomes',  section: 'The Outcome',          tone: 'dark'  },
   { id: 'next',      section: 'Next Steps',           tone: 'paper' },
@@ -193,14 +192,6 @@ const NEXT_STEPS = [
   },
 ]
 
-const WORK = [
-  { ...portfolio[1], featured: true,  src: media.apogeePoster,    label: 'Class-A Tower'      },
-  { ...portfolio[3], featured: false, src: media.gunHillVideo,    poster: media.gunHillInteriorPoster, video: true, label: 'Lifestyle Leasing' },
-  { ...portfolio[7], featured: false, src: media.whiteDeerPoster, label: 'Luxury Residence'  },
-  { ...portfolio[5], featured: false, src: media.mahoganyOffice,  label: 'Executive Interior' },
-  { ...portfolio[0], featured: false, src: media.annapolisCourt,  label: 'Mixed-Use Plaza'   },
-]
-
 function Cover() {
   return (
     <div className="deck-cover">
@@ -286,12 +277,19 @@ function ContextSlide(props) {
           </div>
         </div>
         <div className="deck-fade" style={{ '--d': 480 }}>
-          <div style={{ position: 'relative', aspectRatio: '4 / 5', overflow: 'hidden', border: '1px solid var(--rule)' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={media.apogeePoster} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <div style={{ position: 'relative', aspectRatio: '16 / 10', overflow: 'hidden', border: '1px solid var(--rule)', background: 'var(--bg-stone)' }}>
+            <video
+              src={media.pinnacleEntryVideo}
+              poster={media.pinnacleHeader}
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
             <span className="tick tl" /><span className="tick tr" /><span className="tick bl" /><span className="tick br" />
             <div style={{ position: 'absolute', bottom: 16, left: 16, padding: '8px 12px', background: 'rgba(20, 32, 26, 0.78)', color: 'var(--bg-paper)', fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-              Class-A Tower · Concept Phase
+              Plans → Cinematic Reveal
             </div>
           </div>
         </div>
@@ -360,11 +358,11 @@ function TransformSlide(props) {
           <h4>Outputs You Receive</h4>
           <h3>Sales-Ready System</h3>
           <div className="io-output-frame">
-            <video src={media.gunHillVideo} poster={media.gunHillInteriorPoster} autoPlay muted loop playsInline />
+            <video src={media.whiteDeerVideo} poster={media.whiteDeerPoster} autoPlay muted loop playsInline />
             <div className="scan" />
             <div className="corner tl" />
             <div className="corner br" />
-            <div className="label">Hero Film · 4K Master</div>
+            <div className="label">Finalized Hero Film · 4K Master</div>
           </div>
           <div className="io-input-list" style={{ marginTop: 14 }}>
             <span>Hero film + cutdowns</span>
@@ -437,34 +435,6 @@ function PipelineSlide(props) {
             <div className="pt-tier-name">{t.tier}</div>
             <div className="pt-tier-weeks">{t.weeks}</div>
             <div className="pt-tier-note">{t.note}</div>
-          </div>
-        ))}
-      </div>
-    </ContentSlide>
-  )
-}
-
-function WorkSlide(props) {
-  return (
-    <ContentSlide
-      {...props}
-      header={<>Selected work, calibrated to <span className="accent">premium tickets.</span></>}
-      lede="A glance at projects in the studio's portfolio. Each was delivered as a complete sales and capital toolkit — not a one-off rendering job."
-    >
-      <div className="work-mosaic">
-        {WORK.map((w, i) => (
-          <div key={w.name} className={`work-tile deck-fade${w.featured ? ' feature' : ''}`} style={{ '--d': 280 + i * 90 }}>
-            {w.video ? (
-              <video src={w.src} poster={w.poster} autoPlay muted loop playsInline />
-            ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={w.src} alt={w.name} loading="lazy" />
-            )}
-            <span className="tag">{w.label}</span>
-            <div className="meta">
-              <div className="name">{w.name}</div>
-              <div className="sub">{w.tag} · {w.location}</div>
-            </div>
           </div>
         ))}
       </div>
@@ -626,7 +596,6 @@ export default function CorcoranPresentation() {
     else if (s.id === 'transform') body = <TransformSlide {...slideProps} />
     else if (s.id === 'usecases')  body = <UseCasesSlide  {...slideProps} />
     else if (s.id === 'pipeline')  body = <PipelineSlide  {...slideProps} />
-    else if (s.id === 'work')      body = <WorkSlide      {...slideProps} />
     else if (s.id === 'tiers')     body = <TiersSlide     {...slideProps} />
     else if (s.id === 'outcomes')  body = <OutcomesSlide  {...slideProps} />
     else if (s.id === 'next')      body = <NextStepsSlide {...slideProps} />
