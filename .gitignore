@@ -9,6 +9,9 @@ node_modules/
 .DS_Store
 *.pem
 .env*.local
+SceneSet_AI_Rate_Card.pdf
+commercial-assets/
+public/commercial-assets/*.mp4
 
 # Debug
 npm-debug.log*
