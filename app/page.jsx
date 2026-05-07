@@ -1,10 +1,14 @@
 import Link from 'next/link'
 import MediaFrame from '@/components/MediaFrame'
+import ResponsiveVideo from '@/components/ResponsiveVideo'
 import { audiences, media, portfolio, proofStats, services, useCases } from '@/lib/commercialContent'
+import { pageSeo } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Sceneset.AI — Renderings That Drive Sales and Leasing',
-}
+export const metadata = pageSeo({
+  title: 'SceneSet.AI | Property Visualization for Commercial, Mixed-Use and Residential',
+  description: 'AI-powered renderings, launch films, and campaign assets for commercial, mixed-use, residential, single-family, hospitality, and real estate teams.',
+  path: '/',
+})
 
 export default function HomePage() {
   const featured = portfolio.slice(0, 4)
@@ -19,35 +23,35 @@ export default function HomePage() {
         <div className="container hyper-hero-inner">
           <div className="hyper-copy">
             <div className="fu fu-1 eyebrow brass hyper-kicker">
-              HyperFrames for commercial real estate launches
+              AI-powered property launch visuals
             </div>
             <h1 className="fu fu-2 display hyper-title">
-              Make the unbuilt feel<br />
-              <span className="serif-italic">impossible to ignore.</span>
+              Show the property<br />
+              <span className="serif-italic">before it exists.</span>
             </h1>
             <p className="fu fu-3 hyper-lede">
-              SceneSet turns plans, decks, drone clips, and rough design direction into cinematic selling systems that help developers, brokers, and owners create demand before the asset is finished.
+              SceneSet uses cutting-edge AI, advanced rendering, and senior creative direction to turn plans, decks, drone clips, and rough design direction into cinematic films, stills, and launch assets for commercial, mixed-use, residential, and single-family properties.
             </p>
             <div className="fu fu-4 hyper-actions">
-              <Link href="/studio" className="btn btn-brass">Build My Launch System</Link>
-              <Link href="/portfolio" className="btn btn-ghost-light">Watch the Proof</Link>
+              <Link href="/studio" className="btn btn-brass">Start a Brief</Link>
+              <Link href="/portfolio" className="btn btn-ghost-light">View the Work</Link>
             </div>
           </div>
 
-          <div className="fu fu-3 hyper-stage" aria-label="Commercial real estate visualization system">
+          <div className="fu fu-3 hyper-stage" aria-label="AI-powered real estate visualization system">
             <div className="hyper-frame hyper-frame-main">
-              <video src={media.heroVideo} poster={media.heroPoster} autoPlay muted loop playsInline />
+              <ResponsiveVideo src={media.heroVideo} poster={media.heroPoster} title="Pratt District mixed-use visualization film" priority />
               <div className="hyper-scan" />
               <div className="hyper-caption">
                 <span>SceneSet HyperFrames</span>
-                <strong>Visuals built for sales, leasing, and capital conversations.</strong>
+                <strong>Best-in-world visual production built from source material, AI systems, and studio direction.</strong>
               </div>
             </div>
 
             <div className="hyper-value-strip">
-              <span>Launch earlier</span>
-              <span>Lease faster</span>
-              <span>Defend premium pricing</span>
+              <span>Retail frontage</span>
+              <span>Office amenity</span>
+              <span>Mixed-use story</span>
             </div>
           </div>
         </div>
@@ -77,11 +81,11 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>01 / ROI Proposition</div>
-              <h2 className="display">We make the sales case<br /><span className="serif-italic hl-brass">visible before delivery.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>01 / Use Cases</div>
+              <h2 className="display">Built for the properties<br /><span className="serif-italic hl-brass">people need to believe in.</span></h2>
             </div>
             <p className="pullquote" style={{ maxWidth: 520 }}>
-              The best visual assets create economic momentum. They help prospects understand the offer faster, feel the upside sooner, and give teams better material to sell, lease, raise, and negotiate.
+              Real estate visualization needs more than a pretty rendering. It needs AI-enabled speed, cinematic quality, clear architecture, emotional atmosphere, and the confidence that the finished property will feel real.
             </p>
           </div>
 
@@ -102,7 +106,7 @@ export default function HomePage() {
           <div className="section-head">
             <div>
               <div className="section-num" style={{ marginBottom: 14 }}>02 / What We Create</div>
-              <h2 className="display">Premium visuals<br /><span className="serif-italic hl-brass">that work like sales tools.</span></h2>
+              <h2 className="display">Premium AI production<br /><span className="serif-italic hl-brass">aligned to launch channels.</span></h2>
             </div>
             <Link href="/developments" className="btn btn-ghost">Explore the Offering</Link>
           </div>
@@ -110,12 +114,12 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
             {services.map((service, i) => (
               <Link key={service.title} href={i === 2 ? '/interiors' : '/developments'} className="card card-hover fu" style={{ display: 'block', animationDelay: `${i * 90}ms` }}>
-                <MediaFrame src={service.image} aspect="4 / 5" badge={`Service ${service.number}`} />
+                <MediaFrame src={service.video} poster={service.image} video aspect="4 / 5" badge={`Service ${service.number}`} />
                 <div style={{ padding: '26px 22px 30px' }}>
                   <div className="eyebrow brass" style={{ marginBottom: 12 }}>{service.number}</div>
                   <h3 className="display" style={{ marginBottom: 12 }}>{service.title}</h3>
                   <p style={{ color: 'var(--ink-500)', fontSize: '0.92rem', marginBottom: 22 }}>{service.summary}</p>
-                  <div className="btn-text">See Value</div>
+                  <div className="btn-text">Explore Scope</div>
                 </div>
               </Link>
             ))}
@@ -127,18 +131,18 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 80, alignItems: 'center' }}>
             <div>
-              <div className="eyebrow brass" style={{ marginBottom: 28, color: 'var(--brass-400)' }}>03 / How ROI Compounds</div>
+              <div className="eyebrow brass" style={{ marginBottom: 28, color: 'var(--brass-400)' }}>03 / Campaign System</div>
               <h2 className="display" style={{ marginBottom: 28 }}>
-                From a beautiful rendering to a selling system.
+                From one AI-powered hero film to a full launch toolkit.
               </h2>
               <p className="pullquote" style={{ color: 'var(--ink-300)', fontSize: '1.35rem', marginBottom: 34 }}>
-                Our videos are built for the moment after interest is created: the broker follow-up, the tenant pitch, the investor update, the sales conversation, the leasing page, and the buyer who needs to see why the space is worth the premium.
+                Each clip is built through an AI-accelerated production workflow, then directed and refined so the strongest frames become posters, thumbnails, deck slides, social cutdowns, leasing page loops, and broker follow-up material.
               </p>
-              <Link href="/portfolio" className="btn btn-ghost-light">View Proof Points</Link>
+              <Link href="/portfolio" className="btn btn-ghost-light">Open Work Index</Link>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-              <MediaFrame src={media.gunHillVideo} poster={media.gunHillInteriorPoster} video aspect="4 / 5" badge="Interior Film" />
-              <MediaFrame src={media.pinnacleOutput1} aspect="4 / 5" badge="Lifestyle Context" style={{ marginTop: 46 }} />
+              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 5" badge="Workplace Film" />
+              <MediaFrame src={media.prattVideo} poster={media.prattPoster} video aspect="4 / 5" badge="Mixed-Use Context" style={{ marginTop: 46 }} />
             </div>
           </div>
         </div>
@@ -148,8 +152,8 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>04 / Where ROI Shows Up</div>
-              <h2 className="display">The right visuals<br /><span className="serif-italic hl-brass">create measurable leverage.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>04 / Use-Case Scenarios</div>
+              <h2 className="display">The right visuals<br /><span className="serif-italic hl-brass">make the use case obvious.</span></h2>
             </div>
           </div>
 
@@ -179,7 +183,7 @@ export default function HomePage() {
           <div className="section-head">
             <div>
               <div className="section-num" style={{ marginBottom: 14 }}>05 / Selected Work</div>
-              <h2 className="display">Every frame should<br /><span className="serif-italic hl-brass">help close the gap.</span></h2>
+              <h2 className="display">Every frame should<br /><span className="serif-italic hl-brass">feel impossible to fake.</span></h2>
             </div>
             <Link href="/portfolio" className="btn btn-ghost">Full Work Index</Link>
           </div>
@@ -205,13 +209,13 @@ export default function HomePage() {
 
       <section style={{ padding: '140px 40px', background: 'var(--brass-100)' }}>
         <div className="container-narrow" style={{ textAlign: 'center' }}>
-          <div className="eyebrow brass" style={{ marginBottom: 30 }}>Begin an ROI-Driven Brief</div>
+          <div className="eyebrow brass" style={{ marginBottom: 30 }}>Begin a Brief</div>
           <h2 className="display" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.8rem)', marginBottom: 30 }}>
-            Give your sales and leasing teams<br />
-            <span className="serif-italic hl-brass">the strongest possible story.</span>
+            Give your property team<br />
+            <span className="serif-italic hl-brass">a launch package that feels finished.</span>
           </h2>
           <p className="pullquote" style={{ fontSize: '1.35rem', margin: '0 auto 44px', maxWidth: 700 }}>
-            Send the source material, audience, and revenue objective. We will shape the render package around the moments most likely to influence conversion.
+            Send the source material, audience, use case, and launch channel. We will shape the visuals with AI-powered production and studio direction around the scenes your market needs to understand first.
           </p>
           <Link href="/studio" className="btn btn-primary" style={{ padding: '18px 36px', fontSize: '0.88rem' }}>
             Start the Brief

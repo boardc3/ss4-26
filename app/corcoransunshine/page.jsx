@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback, useMemo } from 'react'
+import ResponsiveVideo from '@/components/ResponsiveVideo'
 import { media } from '@/lib/commercialContent'
 
 const SLIDES = [
@@ -18,20 +19,20 @@ const SLIDES = [
 const PILLARS = [
   {
     num: '01',
-    title: 'Cinematic Sales Films',
-    body: 'Hero films that translate plans, design intent, and brand direction into a sequence buyers respond to. Built for sales galleries, broker outreach, and digital launch campaigns.',
+    title: 'AI Cinematic Sales Films',
+    body: 'Hero films that use cutting-edge AI production, design intent, and senior direction to translate plans into sequences buyers respond to. Built for sales galleries, broker outreach, and digital launch campaigns.',
     deliverables: ['60–90s hero film', '4K master + cutdowns', 'Vertical edits for paid social'],
   },
   {
     num: '02',
-    title: 'Photoreal Stills & Suites',
-    body: 'Editorial still campaigns that act like first-run residence photography years before the building is finished. Calibrated to the price point you are defending.',
+    title: 'AI-Enhanced Stills & Suites',
+    body: 'Editorial still campaigns that feel like first-run residence photography years before the building is finished. AI expands the source, studio polish protects the luxury standard.',
     deliverables: ['Exterior + lifestyle stills', 'Interior residence suites', 'Amenity & lobby story'],
   },
   {
     num: '03',
     title: 'Sales-Ready Visual Strategy',
-    body: 'A complete asset system that supports launch, the model residence experience, the offering plan moment, and the in-contract phase, all under one creative direction.',
+    body: 'A complete AI-powered asset system that supports launch, the model residence experience, the offering plan moment, and the in-contract phase, all under one creative direction.',
     deliverables: ['Web + microsite cuts', 'Investor & broker decks', 'In-gallery loops & posters'],
   },
 ]
@@ -73,25 +74,25 @@ const PIPELINE_STEPS = [
   {
     n: '01',
     title: 'Source Intelligence',
-    body: 'We absorb CAD, Revit, Rhino, plans, drone clips, brand guidelines, comps, and the offering memo. The asset becomes legible to our team end-to-end.',
+    body: 'We absorb CAD, Revit, Rhino, plans, drone clips, brand guidelines, comps, and the offering memo. The asset becomes legible to our creative and AI production systems end-to-end.',
     time: 'Days 1–2',
   },
   {
     n: '02',
-    title: 'Sales Strategy',
-    body: 'We lock the audience, the conversion moment, and the visual proof needed. Camera moves and scene hierarchy are designed against velocity, not vanity.',
+    title: 'AI Production Strategy',
+    body: 'We lock the audience, the conversion moment, and the visual proof needed. Camera moves, prompts, scene hierarchy, and render direction are designed against velocity, not vanity.',
     time: 'Days 2–4',
   },
   {
     n: '03',
-    title: 'Render Production',
-    body: 'Architecture, materiality, landscape, lighting, signage, and people built scene-by-scene with senior creative direction at every checkpoint.',
+    title: 'AI Render Production',
+    body: 'Architecture, materiality, landscape, lighting, signage, and people built scene-by-scene with AI acceleration and senior creative direction at every checkpoint.',
     time: 'Production phase',
   },
   {
     n: '04',
     title: 'Directed Refinement',
-    body: 'Studio review with your team. We refine pacing, sequence, and detail where it matters: model residence, amenity floors, and the buyer arrival sequence.',
+    body: 'Studio review with your team. We refine pacing, sequence, AI artifacts, and detail where it matters: model residence, amenity floors, and the buyer arrival sequence.',
     time: 'Final week',
   },
   {
@@ -204,7 +205,7 @@ function Cover() {
     <div className={`deck-cover${revealed ? ' is-revealed' : ''}`}>
       <div className="hyper-grid" />
       <div className="deck-cover-video" aria-hidden>
-        <video src={media.heroVideo} poster={media.heroPoster} autoPlay muted loop playsInline />
+        <ResponsiveVideo src={media.heroVideo} poster={media.heroPoster} title="SceneSet commercial launch visualization film" priority />
       </div>
 
       <div className="deck-cover-top">
@@ -214,7 +215,7 @@ function Cover() {
       </div>
 
       <div className="deck-cover-mid">
-        <div className="kicker deck-fade" style={{ '--d': 100 }}>The unbuilt, made undeniable.</div>
+        <div className="kicker deck-fade" style={{ '--d': 100 }}>The unbuilt, made undeniable with AI.</div>
         <h1 className="deck-fade" style={{ '--d': 220 }}>
           Cinematic visuals built<br />
           for the way <em>luxury sells.</em>
@@ -225,7 +226,7 @@ function Cover() {
       </div>
 
       <div className="deck-cover-foot">
-        <div>RENDERINGS · FILMS · ROI STRATEGY</div>
+        <div>RENDERINGS · FILMS · LAUNCH STRATEGY</div>
         <div className="badge">PRESS → TO BEGIN</div>
         <div>VOL. 01 · APRIL 2026</div>
       </div>
@@ -285,13 +286,10 @@ function ContextSlide(props) {
         </div>
         <div className="deck-fade" style={{ '--d': 480 }}>
           <div style={{ position: 'relative', aspectRatio: '16 / 10', overflow: 'hidden', border: '1px solid var(--rule)', background: 'var(--bg-stone)' }}>
-            <video
-              src={media.pinnacleRoomsVideo}
-              poster={media.pinnacleHeader}
-              autoPlay
-              muted
-              loop
-              playsInline
+            <ResponsiveVideo
+              src={media.mulhollandVideo}
+              poster={media.mulhollandPoster}
+              title="Mulholland property visualization film"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
             <span className="tick tl" /><span className="tick tr" /><span className="tick bl" /><span className="tick br" />
@@ -309,8 +307,8 @@ function OfferingSlide(props) {
   return (
     <ContentSlide
       {...props}
-      header={<>Three production tracks,<br /><span className="accent">one creative direction.</span></>}
-      lede="Every Corcoran Sunshine launch will use these in different mixes. The system is the same: senior creative direction, photoreal output, and visuals built around the way buyers actually decide."
+      header={<>Three AI production tracks,<br /><span className="accent">one creative direction.</span></>}
+      lede="Every launch will use these in different mixes. The system is the same: cutting-edge AI, senior creative direction, photoreal output, and visuals built around the way buyers actually decide."
     >
       <div className="deck-grid-3">
         {PILLARS.map((p, i) => (
@@ -332,8 +330,8 @@ function TransformSlide(props) {
   return (
     <ContentSlide
       {...props}
-      header={<>From floorplate to <span className="accent">finished sale,</span><br />in one studio.</>}
-      lede="We work backwards from the buyer experience. Whatever you have today — early massing, plans, brand guidance, comps — becomes a calibrated visual system designed against your sales objective."
+      header={<>From floorplate to <span className="accent">finished sale,</span><br />in one AI studio.</>}
+      lede="We work backwards from the buyer experience. Whatever you have today — early massing, plans, brand guidance, comps — becomes a calibrated AI-powered visual system designed against your sales objective."
     >
       <div className="io-stage">
         <div className="io-side deck-fade" style={{ '--d': 320 }}>
@@ -365,7 +363,7 @@ function TransformSlide(props) {
           <h4>Outputs You Receive</h4>
           <h3>Sales-Ready System</h3>
           <div className="io-output-frame">
-            <video src={media.whiteDeerVideo} poster={media.whiteDeerPoster} autoPlay muted loop playsInline />
+            <ResponsiveVideo src={media.prattVideo} poster={media.prattPoster} title="Pratt District visualization film" />
             <div className="scan" />
             <div className="corner tl" />
             <div className="corner br" />
@@ -536,7 +534,7 @@ function NextStepsSlide(props) {
           </div>
 
           <div className="deck-fade" style={{ '--d': 800, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginTop: 14 }}>
-            <a href="mailto:studio@sceneset.ai?subject=Corcoran%20Sunshine%20%C2%B7%20Capabilities%20Brief" className="btn btn-primary" style={{ padding: '18px 30px', fontSize: '0.86rem' }}>
+            <a href="mailto:chris@sceneset.ai?subject=SceneSet%20AI%20%C2%B7%20Capabilities%20Brief" className="btn btn-primary" style={{ padding: '18px 30px', fontSize: '0.86rem' }}>
               Send the Brief
             </a>
             <a href="/studio" className="btn btn-ghost" style={{ padding: '18px 30px', fontSize: '0.86rem' }}>
@@ -545,7 +543,7 @@ function NextStepsSlide(props) {
           </div>
 
           <div className="deck-fade mono" style={{ '--d': 920, marginTop: 38, color: 'var(--ink-500)' }}>
-            studio@sceneset.ai &nbsp;·&nbsp; +1 (212) 555 — 0118 &nbsp;·&nbsp; PRIORITY TURNAROUND: 2 BUSINESS DAYS
+            chris@sceneset.ai &nbsp;·&nbsp; PRIORITY AI PRODUCTION TURNAROUND: 2 BUSINESS DAYS
           </div>
         </div>
       </div>

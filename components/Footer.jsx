@@ -13,7 +13,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="pullquote" style={{ color: 'var(--ink-300)', maxWidth: 420, fontSize: '1.2rem' }}>
-              Advanced renderings, films, and visual strategy for commercial real estate teams that need stronger sales material, faster leasing momentum, and clearer ROI.
+              AI-powered renderings, films, and visual strategy for commercial, mixed-use, residential, and single-family properties that need to look finished before they are built.
             </p>
           </div>
 
@@ -28,21 +28,21 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Value Created</div>
+            <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Use Cases</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
-              <li>Stronger sales conversations</li>
-              <li>Higher leasing confidence</li>
-              <li>Better pricing support</li>
-              <li>Launch assets that convert</li>
+              <li>Mixed-use launches</li>
+              <li>Office and amenity tours</li>
+              <li>Retail repositioning</li>
+              <li>Hospitality-led districts</li>
             </ul>
           </div>
 
           <div>
             <div className="eyebrow cream" style={{ marginBottom: 20, color: 'var(--brass-400)' }}>Contact</div>
             <ul style={{ listStyle: 'none', display: 'grid', gap: 12 }}>
-              <li>studio@sceneset.ai</li>
-              <li>Priority render strategy briefs</li>
-              <li className="mono" style={{ marginTop: 8 }}>RENDERINGS · FILMS · ROI STRATEGY</li>
+              <li><a href="mailto:chris@sceneset.ai">chris@sceneset.ai</a></li>
+              <li>Priority AI production briefs</li>
+              <li className="mono" style={{ marginTop: 8 }}>RENDERINGS · FILMS · LAUNCH STRATEGY</li>
             </ul>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Footer() {
             © 2026 SCENESET VISUALIZATION CO.
           </div>
           <div className="mono" style={{ color: 'var(--ink-300)' }}>
-            ADVANCED RENDERING · SALES ENABLEMENT · LEASING ROI
+            AI PROPERTY RENDERING · MIXED-USE FILMS · RESIDENTIAL VISUALS
           </div>
         </div>
       </div>

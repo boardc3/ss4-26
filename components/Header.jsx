@@ -6,7 +6,7 @@ import { useTweaksContext } from '@/contexts/TweaksContext'
 
 const NAV = [
   { href: '/',             label: 'Strategy' },
-  { href: '/developments', label: 'Commercial' },
+  { href: '/developments', label: 'Developments' },
   { href: '/interiors',    label: 'Interiors' },
   { href: '/portfolio',    label: 'Work' },
   { href: '/process',      label: 'Pipeline' },
@@ -39,10 +39,10 @@ export default function Header() {
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <div className="mono" style={{ color: 'var(--ink-500)', fontSize: '0.68rem' }}>
-            SALES · LEASING · ROI
+            MIXED-USE · RESIDENTIAL
           </div>
           <Link href="/studio" className="btn btn-primary" style={{ padding: '10px 18px', fontSize: '0.72rem' }}>
-            Scope ROI
+            Start a Brief
           </Link>
         </div>
       </div>

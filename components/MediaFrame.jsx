@@ -1,3 +1,5 @@
+import ResponsiveVideo from './ResponsiveVideo'
+
 export default function MediaFrame({
   src,
   poster,
@@ -10,12 +12,13 @@ export default function MediaFrame({
   video = false,
   className = '',
   style = {},
+  priority = false,
   children,
 }) {
   return (
     <div className={`img-frame ${className}`} style={{ aspectRatio: aspect, ...style }}>
       {video ? (
-        <video src={src} poster={poster} autoPlay muted loop playsInline />
+        <ResponsiveVideo src={src} poster={poster} title={alt || metaTitle || badge} priority={priority} />
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt={alt} loading="lazy" />

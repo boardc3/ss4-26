@@ -1,16 +1,20 @@
 import Link from 'next/link'
 import MediaFrame from '@/components/MediaFrame'
 import { media } from '@/lib/commercialContent'
+import { pageSeo } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Commercial Interiors — Sceneset.AI',
-}
+export const metadata = pageSeo({
+  title: 'AI Interior Visualization | SceneSet.AI',
+  description: 'AI-powered interior renderings and films for lobbies, workplace suites, homes, retail interiors, hospitality spaces, amenity clubs, and mixed-use launch campaigns.',
+  path: '/interiors',
+  image: '/commercial-assets/posters/BKT-4-16-1.jpg',
+})
 
 const interiorScopes = [
-  ['Lobby Arrival', 'First-impression sequences that communicate class, confidence, circulation, security, and service.'],
-  ['Office Suites', 'Spec suites, executive rooms, lounges, and collaboration settings rendered to justify premium occupancy.'],
-  ['Amenity Clubs', 'Pool, fitness, terrace, food and beverage, and event scenes that turn amenities into measurable leasing value.'],
-  ['Hospitality Moments', 'Restaurant, bar, guest arrival, wellness, and evening-use scenes directed with cinematic light and intent.'],
+  ['Lobby Arrival', 'AI-assisted first-impression sequences that communicate class, confidence, circulation, security, and service.'],
+  ['Office & Home Suites', 'Spec suites, private rooms, lounges, kitchens, and collaboration settings rendered with cinematic finish quality.'],
+  ['Amenity Clubs', 'Pool, fitness, terrace, food and beverage, and event scenes generated and refined to make the experience feel active.'],
+  ['Hospitality Moments', 'Restaurant, bar, guest arrival, wellness, and evening-use scenes directed with cinematic light, AI iteration, and intent.'],
 ]
 
 export default function InteriorsPage() {
@@ -19,14 +23,14 @@ export default function InteriorsPage() {
       <section style={{ padding: '80px 40px 60px' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 48 }}>
-            <div className="eyebrow brass">Commercial Interior Visualization</div>
-            <div className="mono">FINISH · EXPERIENCE · LEASING · ROI</div>
+            <div className="eyebrow brass">AI Interior Visualization</div>
+            <div className="mono">AI · FINISH · EXPERIENCE · LAUNCH</div>
           </div>
           <h1 className="fu fu-1 display" style={{ maxWidth: 1200, marginBottom: 34 }}>
             Make premium space<br />feel worth the <span className="serif-italic hl-brass">premium.</span>
           </h1>
           <p className="fu fu-2 pullquote" style={{ maxWidth: 720 }}>
-            We render interiors as leasing and sales arguments. Finish quality, light, circulation, density, service, and atmosphere are composed to help tenants, buyers, and owners understand why the space deserves the rate.
+            We use cutting-edge AI and senior art direction to render interiors as sales, leasing, and design arguments. Finish quality, light, circulation, service, and atmosphere are composed so tenants, buyers, and owners understand why the space feels exceptional.
           </p>
         </div>
       </section>
@@ -35,18 +39,18 @@ export default function InteriorsPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 0.75fr', gap: 20, alignItems: 'stretch' }}>
             <MediaFrame
-              src={media.gunHillVideo}
-              poster={media.gunHillInteriorPoster}
+              src={media.bktVideo}
+              poster={media.bktPoster}
               video
               aspect="16 / 10"
               badge="Interior Motion"
-              badgeBrass="Pinnacle Ithaca"
+              badgeBrass="Workplace"
               metaTitle="Leasing interiors built to communicate finish, flow, and daily use"
-              metaSub="Motion, material, and atmosphere shaped for commercial conversion"
+              metaSub="Motion, material, and atmosphere shaped with AI-assisted production"
             />
             <div style={{ display: 'grid', gap: 20 }}>
-              <MediaFrame src={media.mahoganyOffice} aspect="4 / 3" badge="Executive Office" />
-              <MediaFrame src={media.alewivePool} aspect="4 / 3" badge="Amenity Club" />
+              <MediaFrame src={media.mulhollandVideo} poster={media.mulhollandPoster} video aspect="4 / 3" badge="Residential Amenity" />
+              <MediaFrame src={media.psVideo} poster={media.psPoster} video aspect="4 / 3" badge="Retail Interior" />
             </div>
           </div>
         </div>
@@ -56,8 +60,8 @@ export default function InteriorsPage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <div className="section-num" style={{ marginBottom: 14 }}>01 / Interior ROI</div>
-              <h2 className="display">Spaces rendered for<br /><span className="serif-italic hl-brass">commitments, not decoration.</span></h2>
+              <div className="section-num" style={{ marginBottom: 14 }}>01 / Interior Use Cases</div>
+              <h2 className="display">Spaces rendered with AI<br /><span className="serif-italic hl-brass">for commitments, not decoration.</span></h2>
             </div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
@@ -80,14 +84,14 @@ export default function InteriorsPage() {
               <h2 className="display">Show the experience<br /><span className="serif-italic hl-brass">that supports the rate.</span></h2>
             </div>
             <p className="pullquote" style={{ maxWidth: 500 }}>
-              Amenities create ROI when prospects can picture how they will be used. We turn pools, lounges, patios, and event spaces into lifestyle proof that supports leasing velocity and pricing confidence.
+              Amenities matter when prospects can picture how they will be used. We turn pools, lounges, patios, lobbies, and event spaces into clear experience proof using AI speed, cinematic lighting, and careful final polish.
             </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-            <MediaFrame src={media.alewiveDayVideo} poster={media.alewivePool} video aspect="4 / 5" badge="Daytime Tour" />
-            <MediaFrame src={media.alewiveCocktailVideo} poster={media.alewivePool} video aspect="4 / 5" badge="Cocktail Use" style={{ marginTop: 42 }} />
-            <MediaFrame src={media.whiteDeerFamily} aspect="4 / 5" badge="Lifestyle Room" />
+            <MediaFrame src={media.prattVideo} poster={media.prattPoster} video aspect="4 / 5" badge="Daytime District" />
+            <MediaFrame src={media.mulhollandVideo} poster={media.mulhollandPoster} video aspect="4 / 5" badge="Lifestyle Sequence" style={{ marginTop: 42 }} />
+            <MediaFrame src={media.apogeeVideo} poster={media.apogeePoster} video aspect="4 / 5" badge="Arrival Mood" />
           </div>
         </div>
       </section>
@@ -96,16 +100,16 @@ export default function InteriorsPage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 70, alignItems: 'center' }}>
             <div>
-              <div className="eyebrow brass" style={{ marginBottom: 28, color: 'var(--brass-400)' }}>03 / Commercial Standard</div>
-              <h2 className="display" style={{ marginBottom: 24 }}>Every material choice should help sell the space.</h2>
+              <div className="eyebrow brass" style={{ marginBottom: 28, color: 'var(--brass-400)' }}>03 / AI Production Standard</div>
+              <h2 className="display" style={{ marginBottom: 24 }}>Every material choice should feel deliberately produced.</h2>
               <p className="pullquote" style={{ color: 'var(--ink-300)', fontSize: '1.35rem', marginBottom: 34 }}>
-                Our interiors are produced with an operator's eye and a marketer's discipline, so the visuals communicate not only what the space looks like, but why it deserves attention, tenancy, and price.
+                Our interiors are produced with AI-enabled iteration, an operator's eye, and a marketer's discipline, so the visuals communicate not only what the space looks like, but why it deserves attention, tenancy, and price.
               </p>
               <Link href="/studio" className="btn btn-ghost-light">Scope an Interior Package</Link>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-              <MediaFrame src={media.whiteDeerKitchen} aspect="4 / 5" badge="Kitchen Finish" />
-              <MediaFrame src={media.arizonaOutput1} aspect="4 / 5" badge="Hospitality Mood" style={{ marginTop: 48 }} />
+              <MediaFrame src={media.psVideo} poster={media.psPoster} video aspect="4 / 5" badge="Retail Finish" />
+              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 5" badge="Workplace Mood" style={{ marginTop: 48 }} />
             </div>
           </div>
         </div>
