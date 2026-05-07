@@ -1,7 +1,5 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 function escapeHtml(value = '') {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -20,6 +18,8 @@ export async function POST(request) {
     if (!process.env.RESEND_API_KEY || !to) {
       return Response.json({ error: 'Email service is not configured.' }, { status: 500 })
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     if (!form.name || !form.email) {
       return Response.json({ error: 'Name and email are required.' }, { status: 400 })
