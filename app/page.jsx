@@ -141,7 +141,7 @@ export default function HomePage() {
               <Link href="/portfolio" className="btn btn-ghost-light">Open Work Index</Link>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 5" badge="Workplace Film" />
+              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 5" badge="Luxury Condo Film" />
               <MediaFrame src={media.prattVideo} poster={media.prattPoster} video aspect="4 / 5" badge="Mixed-Use Context" style={{ marginTop: 46 }} />
             </div>
           </div>

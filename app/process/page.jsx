@@ -40,7 +40,7 @@ export default function ProcessPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20 }}>
             <MediaFrame src={media.heroVideo} poster={media.heroPoster} video aspect="16 / 9" badge="Production System" badgeBrass="Commercial" />
             <div style={{ display: 'grid', gap: 20 }}>
-              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 3" badge="Workplace" />
+              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 3" badge="Luxury Condo" />
               <MediaFrame src={media.psVideo} poster={media.psPoster} video aspect="4 / 3" badge="Public Realm" />
             </div>
           </div>

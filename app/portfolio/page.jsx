@@ -4,7 +4,7 @@ import { useState } from 'react'
 import MediaFrame from '@/components/MediaFrame'
 import { portfolio } from '@/lib/commercialContent'
 
-const filters = ['All', 'Commercial', 'Workplace', 'Mixed-Use', 'Hospitality']
+const filters = ['All', 'Commercial', 'Luxury Condo', 'Mixed-Use', 'Hospitality']
 const gridPattern = [
   { col: 'span 7', ar: '16 / 10' },
   { col: 'span 5', ar: '16 / 10' },

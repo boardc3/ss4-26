@@ -59,7 +59,7 @@ export default function DevelopmentsPage() {
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 18, marginTop: 22 }}>
             <MediaFrame src={media.psVideo} poster={media.psPoster} video aspect="4 / 3" badge="Retail Walk" />
-            <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 3" badge="Office Amenity" />
+            <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 3" badge="Luxury Condo Amenity" />
             <MediaFrame src={media.mulhollandVideo} poster={media.mulhollandPoster} video aspect="4 / 3" badge="Lifestyle Context" />
             <MediaFrame src={media.apogeeVideo} poster={media.apogeePoster} video aspect="4 / 3" badge="Tower Launch" />
           </div>

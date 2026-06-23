@@ -44,13 +44,13 @@ export default function InteriorsPage() {
               video
               aspect="16 / 10"
               badge="Interior Motion"
-              badgeBrass="Workplace"
+              badgeBrass="Luxury Condo"
               metaTitle="Leasing interiors built to communicate finish, flow, and daily use"
               metaSub="Motion, material, and atmosphere shaped with AI-assisted production"
             />
             <div style={{ display: 'grid', gap: 20 }}>
               <MediaFrame src={media.mulhollandVideo} poster={media.mulhollandPoster} video aspect="4 / 3" badge="Residential Amenity" />
-              <MediaFrame src={media.psVideo} poster={media.psPoster} video aspect="4 / 3" badge="Retail Interior" />
+              <MediaFrame src={media.psVideo} poster={media.psPoster} video aspect="4 / 3" badge="Luxury Vacation Rental" />
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function InteriorsPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
               <MediaFrame src={media.psVideo} poster={media.psPoster} video aspect="4 / 5" badge="Retail Finish" />
-              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 5" badge="Workplace Mood" style={{ marginTop: 48 }} />
+              <MediaFrame src={media.bktVideo} poster={media.bktPoster} video aspect="4 / 5" badge="Luxury Condo Mood" style={{ marginTop: 48 }} />
             </div>
           </div>
         </div>
