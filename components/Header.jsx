@@ -10,7 +10,6 @@ const NAV = [
   { href: '/interiors',    label: 'Interiors' },
   { href: '/portfolio',    label: 'Work' },
   { href: '/process',      label: 'Pipeline' },
-  { href: '/leads',        label: 'Leads' },
   { href: '/studio',       label: 'Brief' },
 ]
 
